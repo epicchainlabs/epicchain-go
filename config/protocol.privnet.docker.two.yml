@@ -1,0 +1,79 @@
+ProtocolConfiguration:
+  Magic: 56753
+  MaxTraceableBlocks: 200000
+  TimePerBlock: 15s
+  MemPoolSize: 50000
+  StandbyCommittee:
+    - 02b3622bf4017bdfe317c58aed5f4c753f206b7db896046fa7d774bbc4bf7f8dc2
+    - 02103a7f7dd016558597f7960d27c516a4394fd968b9e65155eb4b013e4040406e
+    - 03d90c07df63e690ce77912e10ab51acc944b66860237b608c4f8f8309e71ee699
+    - 02a7bc55fe8684e0119768d104ba30795bdcc86619e864add26156723ed185cd62
+  ValidatorsCount: 4
+  SeedList:
+    - node_one:20333
+    - node_two:20334
+    - node_three:20335
+    - node_four:20336
+  VerifyTransactions: true
+  P2PSigExtensions: false
+
+ApplicationConfiguration:
+  SkipBlockVerification: false
+  # LogPath could be set up in case you need stdout logs to some proper file.
+  # LogPath: "./log/neogo.log"
+  DBConfiguration:
+    Type: "leveldb" #other options: 'inmemory','boltdb'
+    # DB type options. Uncomment those you need in case you want to switch DB type.
+    LevelDBOptions:
+      DataDirectoryPath: "/chains/two"
+  #    BoltDBOptions:
+  #      FilePath: "./chains/privnet.bolt"
+  P2P:
+    Addresses:
+      - ":20334" # in form of "[host]:[port][:announcedPort]"
+    DialTimeout: 3s
+    ProtoTickInterval: 2s
+    PingInterval: 30s
+    PingTimeout: 90s
+    MaxPeers: 10
+    AttemptConnPeers: 5
+    MinPeers: 2
+  Relay: true
+  Oracle:
+    Enabled: false
+    AllowedContentTypes:
+      - application/json
+    Nodes:
+      - http://node_one:30333
+      - http://node_two:30334
+      - http://node_three:30335
+      - http://node_four:30336
+    RequestTimeout: 5s
+    UnlockWallet:
+      Path: "/wallet2.json"
+      Password: "two"
+  P2PNotary:
+    Enabled: false
+    UnlockWallet:
+      Path: "/notary_wallet.json"
+      Password: "pass"
+  RPC:
+    Enabled: true
+    MaxGasInvoke: 15
+    EnableCORSWorkaround: false
+    Addresses:
+      - ":30334"
+    SessionEnabled: true
+  Prometheus:
+    Enabled: true
+    Addresses:
+      - ":20002"
+  Pprof:
+    Enabled: false
+    Addresses:
+      - ":20012"
+  Consensus:
+    Enabled: true
+    UnlockWallet:
+      Path: "/wallet2.json"
+      Password: "two"

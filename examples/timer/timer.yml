@@ -1,0 +1,6 @@
+name: "Timer example"
+sourceurl: https://github.com/nspcc-dev/neo-go/
+supportedstandards: []
+events: []
+permissions:
+  - methods: '*'

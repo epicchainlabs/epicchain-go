@@ -1,0 +1,12 @@
+name: Test verify
+events:
+  - name: OnNEP11Payment
+    parameters:
+      - name: from
+        type: Hash160
+      - name: amount
+        type: Integer
+      - name: tokenId
+        type: ByteArray
+      - name: data
+        type: Any

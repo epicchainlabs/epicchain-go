@@ -1,0 +1,16 @@
+name: Test undeclared event
+events:
+  - name: SomeEvent
+    parameters:
+      - name: p1
+        type: Array
+        extendedtype:
+          base: Array
+          name: invalid5.NamedStruct
+namedtypes:
+  invalid5.NamedStruct:
+    base: Array
+    name: invalid5.NamedStruct
+    fields:
+      - field: SomeInt
+        base: Integer

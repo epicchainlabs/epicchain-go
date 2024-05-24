@@ -1,0 +1,57 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Added by CoZ developers
+vendor/
+bin/
+!examples/**/vendor
+
+# text editors
+# vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+# goland
+.idea/*
+# emacs
+*~
+TAGS
+
+# storage 
+/chains
+
+# patch
+*.orig
+*.rej
+
+# Coverage
+coverage.txt
+coverage.html
+
+# Compiler output
+examples/*/*.nef
+examples/*/*.json
+
+# Fuzzing testdata.
+testdata/
+!cli/testdata
+!internal/basicchain/testdata
+!pkg/compiler/testdata
+!pkg/config/testdata
+!pkg/consensus/testdata
+!pkg/services/rpcsrv/testdata
+!pkg/services/notary/testdata
+!pkg/services/oracle/testdata
+!pkg/smartcontract/testdata
+!cli/smartcontract/testdata
+pkg/vm/testdata/fuzz
+!pkg/vm/testdata
+!pkg/wallet/testdata

@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "accounts": [
+    {
+      "address": "Nfyz4KcsgYepRJw1W5C2uKCi6QWKf7v6gG",
+      "key": "6PYVjvHyAFQPXCU3PNsiRbF1RxEyyrT4PqLbSEEZcyYDFAMpSxPZnuRznY",
+      "label": "kek",
+      "contract": {
+        "script": "DCECl3UyEIq6T5RRIXS6z4tNdZPTzQ7NvXyx7FwK05d9UyZBVuezJw==",
+        "parameters": [
+          {
+            "name": "parameter0",
+            "type": "Signature"
+          }
+        ],
+        "deployed": false
+      },
+      "lock": false,
+      "isDefault": false
+    }
+  ],
+  "scrypt": {
+    "n": 2,
+    "r": 1,
+    "p": 1
+  },
+  "extra": {
+    "Tokens": null
+  }
+}

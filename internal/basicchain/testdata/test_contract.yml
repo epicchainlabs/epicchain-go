@@ -1,0 +1,17 @@
+name: "Rubl"
+sourceurl: https://github.com/nspcc-dev/neo-go/
+supportedstandards: ["NEP-17"]
+safemethods: ["balanceOf", "decimals", "symbol", "totalSupply"]
+events:
+  - name: Transfer
+    parameters:
+      - name: from
+        type: Hash160
+      - name: to
+        type: Hash160
+      - name: amount
+        type: Integer
+permissions:
+  - hash: ef4073a0f2b305a38ec4050e4d3d28bc40ea63f5
+    methods: ["transfer"]
+  - methods: ["onNEP17Payment"]

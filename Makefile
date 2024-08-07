@@ -45,14 +45,14 @@ docker/$(BINARY):
 	--env HOME=/src \
 	golang:$(GO_VERSION) make $(BINARY)
 
-neo-go.service: neo-go.service.template
+epicchain-go.service: epicchain-go.service.template
 	@sed -r -e 's_BINDIR_$(BINDIR)_' -e 's_UNITWORKDIR_$(UNITWORKDIR)_' -e 's_SYSCONFIGDIR_$(SYSCONFIGDIR)_' $< >$@
 
-install: build neo-go.service
+install: build epicchain-go.service
 	@echo "=> Installing systemd service"
 	@mkdir -p $(DESTDIR)$(SYSCONFIGDIR)/neo-go \
 		&& mkdir -p $(SYSTEMDUNIT_DIR) \
-		&& cp ./neo-go.service $(SYSTEMDUNIT_DIR) \
+		&& cp ./epicchain-go.service $(SYSTEMDUNIT_DIR) \
 		&& cp ./config/protocol.mainnet.yml $(DESTDIR)$(SYSCONFIGDIR)/neo-go \
 		&& cp ./config/protocol.privnet.yml $(DESTDIR)$(SYSCONFIGDIR)/neo-go \
 		&& cp ./config/protocol.testnet.yml $(DESTDIR)$(SYSCONFIGDIR)/neo-go \
@@ -63,7 +63,7 @@ postinst: install
 	@id neo-go || useradd -s /usr/sbin/nologin -d $(UNITWORKDIR) neo-go \
 		&& mkdir -p $(UNITWORKDIR) \
 		&& chown -R neo-go:neo-go $(UNITWORKDIR) $(BINDIR)/neo-go \
-		&& systemctl enable neo-go.service
+		&& systemctl enable epicchain-go.service
 
 image: deps
 	@echo "=> Building image"

@@ -8,15 +8,15 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/random"
-	"github.com/nspcc-dev/neo-go/internal/versionutil"
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/keys"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/neo"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/internal/random"
+	"github.com/epicchainlabs/epicchain-go/internal/versionutil"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/neo"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/require"
 )
 
@@ -130,25 +130,25 @@ func TestOnPayableChecks(t *testing.T) {
 
 	t.Run("NEP-11, good", func(t *testing.T) {
 		src := `package payable
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 		func OnNEP11Payment(from interop.Hash160, amount int, tokenID []byte, data any) {}`
 		require.NoError(t, compileAndCheck(t, src))
 	})
 	t.Run("NEP-11, bad", func(t *testing.T) {
 		src := `package payable
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 		func OnNEP11Payment(from interop.Hash160, amount int, oldParam string, tokenID []byte, data any) {}`
 		require.Error(t, compileAndCheck(t, src))
 	})
 	t.Run("NEP-17, good", func(t *testing.T) {
 		src := `package payable
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 		func OnNEP17Payment(from interop.Hash160, amount int, data any) {}`
 		require.NoError(t, compileAndCheck(t, src))
 	})
 	t.Run("NEP-17, bad", func(t *testing.T) {
 		src := `package payable
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 		func OnNEP17Payment(from interop.Hash160, amount int, data any, extra int) {}`
 		require.Error(t, compileAndCheck(t, src))
 	})
@@ -171,7 +171,7 @@ func TestSafeMethodWarnings(t *testing.T) {
 
 func TestEventWarnings(t *testing.T) {
 	src := `package payable
-		import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 		func Main() { runtime.Notify("Event", 1) }`
 
 	_, di, err := compiler.CompileWithOptions("eventTest.go", strings.NewReader(src), nil)
@@ -226,7 +226,7 @@ func TestEventWarnings(t *testing.T) {
 	t.Run("event in imported package", func(t *testing.T) {
 		t.Run("unused", func(t *testing.T) {
 			src := `package foo
-			import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/notify"
+			import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/notify"
 			func Main() int {
 				return notify.Value
 			}`
@@ -239,7 +239,7 @@ func TestEventWarnings(t *testing.T) {
 		})
 		t.Run("used", func(t *testing.T) {
 			src := `package foo
-			import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/notify"
+			import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/notify"
 			func Main() int {
 				notify.EmitEvent()
 				return 42
@@ -261,7 +261,7 @@ func TestEventWarnings(t *testing.T) {
 	})
 	t.Run("variadic event args via ellipsis", func(t *testing.T) {
 		src := `package payable
-		import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 		func Main() {
 			runtime.Notify("Event", []any{1}...)
 		}`
@@ -282,7 +282,7 @@ func TestEventWarnings(t *testing.T) {
 
 func TestNotifyInVerify(t *testing.T) {
 	srcTmpl := `package payable
-		import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 		func Verify() bool { runtime.%s("Event"); return true }`
 
 	for _, name := range []string{"Notify", "Log"} {
@@ -315,8 +315,8 @@ func TestInvokedContractsPermissons(t *testing.T) {
 
 	t.Run("native", func(t *testing.T) {
 		src := `package test
-			import "github.com/nspcc-dev/neo-go/pkg/interop/native/neo"
-			import "github.com/nspcc-dev/neo-go/pkg/interop/native/management"
+			import "github.com/epicchainlabs/epicchain-go/pkg/interop/native/neo"
+			import "github.com/epicchainlabs/epicchain-go/pkg/interop/native/management"
 			func Main() int {
 				neo.Transfer(nil, nil, 10, nil)
 				management.GetContract(nil) // skip read-only
@@ -344,9 +344,9 @@ func TestInvokedContractsPermissons(t *testing.T) {
 	t.Run("custom", func(t *testing.T) {
 		hashStr := "aaaaaaaaaaaaaaaaaaaa"
 		src := fmt.Sprintf(`package test
-			import "github.com/nspcc-dev/neo-go/pkg/interop/contract"
-			import "github.com/nspcc-dev/neo-go/pkg/interop"
-			import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/runh"
+			import "github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+			import "github.com/epicchainlabs/epicchain-go/pkg/interop"
+			import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/runh"
 
 			const hash = "%s"
 			var runtimeHash interop.Hash160

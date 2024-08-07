@@ -3,7 +3,7 @@ package storage
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/storage/dbconfig"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage/dbconfig"
 	"github.com/stretchr/testify/require"
 	"github.com/syndtr/goleveldb/leveldb"
 )

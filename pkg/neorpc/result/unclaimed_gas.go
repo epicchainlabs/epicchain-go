@@ -5,8 +5,8 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/nspcc-dev/neo-go/pkg/encoding/address"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/address"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // UnclaimedGas response wrapper.

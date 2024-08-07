@@ -1,8 +1,8 @@
 package interop
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/core/fee"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/fee"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
 )
 
 // GetPrice returns a price for executing op with the provided parameter.

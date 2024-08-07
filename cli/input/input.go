@@ -7,8 +7,8 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/encoding/fixedn"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/fixedn"
 	"golang.org/x/term"
 )
 

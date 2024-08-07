@@ -2,7 +2,7 @@ package consensus
 
 import (
 	"github.com/nspcc-dev/dbft"
-	"github.com/nspcc-dev/neo-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
 )
 
 // commit represents dBFT Commit message.

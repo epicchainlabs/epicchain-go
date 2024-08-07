@@ -1,6 +1,6 @@
 package runh
 
-import "github.com/nspcc-dev/neo-go/pkg/interop"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 // RuntimeHash possibly returns some hash at runtime.
 func RuntimeHash() interop.Hash160 {

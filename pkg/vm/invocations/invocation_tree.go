@@ -1,7 +1,7 @@
 package invocations
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // Tree represents a tree with script hashes; when traversing it,

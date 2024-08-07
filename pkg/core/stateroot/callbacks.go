@@ -1,7 +1,7 @@
 package stateroot
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/crypto/keys"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
 )
 
 // SetUpdateValidatorsCallback sets callback for sending signed root.

@@ -8,9 +8,9 @@ package neptoken
 import (
 	"math/big"
 
-	"github.com/nspcc-dev/neo-go/pkg/neorpc/result"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/unwrap"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc/result"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/unwrap"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 const (

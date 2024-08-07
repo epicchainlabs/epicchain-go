@@ -1,5 +1,5 @@
 name: "HASHY NFT"
-sourceurl: https://github.com/nspcc-dev/neo-go/
+sourceurl: https://github.com/epicchainlabs/epicchain-go/
 supportedstandards: ["NEP-11"]
 safemethods: ["balanceOf", "decimals", "symbol", "totalSupply", "tokensOf", "ownerOf", "tokens", "properties"]
 events:

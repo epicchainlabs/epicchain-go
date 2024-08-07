@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/require"
 )
 
@@ -56,7 +56,7 @@ func TestDefer(t *testing.T) {
 		src := `package main
 
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 		)
 
 		func Main() {

@@ -1,6 +1,6 @@
 package result
 
-import "github.com/nspcc-dev/neo-go/pkg/util"
+import "github.com/epicchainlabs/epicchain-go/pkg/util"
 
 // RawMempool represents a result of getrawmempool RPC call.
 type RawMempool struct {

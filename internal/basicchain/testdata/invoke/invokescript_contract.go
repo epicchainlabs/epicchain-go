@@ -1,6 +1,6 @@
 package invoke
 
-import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 
 // This contract is used to test `invokescript` and `invokefunction` RPC-calls
 func Main() int {

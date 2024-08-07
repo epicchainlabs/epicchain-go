@@ -1,7 +1,7 @@
 package vm
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 )
 
 // refCounter represents a reference counter for the VM.

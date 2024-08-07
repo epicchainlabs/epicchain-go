@@ -1,7 +1,7 @@
 package transaction
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
 )
 
 // NotaryAssisted represents attribute for notary service transactions.

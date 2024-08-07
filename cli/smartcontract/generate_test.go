@@ -9,9 +9,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 	"github.com/stretchr/testify/require"
 	"github.com/urfave/cli"
 )
@@ -158,12 +158,12 @@ package wrapper
 
 import (
 	"github.com/heyitsme/mycontract"
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/interop/iterator"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/ledger"
-	"github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
-	"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/iterator"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 )
 
 // Hash contains contract hash in big-endian form.
@@ -246,11 +246,11 @@ package wrapper
 
 import (
 	"github.com/heyitsme/mycontract"
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/interop/iterator"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/ledger"
-	"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/iterator"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 )
 
 // Contract represents the MyContract smart contract.
@@ -366,8 +366,8 @@ func TestGenerateValidPackageName(t *testing.T) {
 package myspacecontract
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 )
 
 // Hash contains contract hash in big-endian form.
@@ -392,9 +392,9 @@ func Get() int {
 package myspacecontract
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/neorpc/result"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/unwrap"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc/result"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/unwrap"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 	"math/big"
 )
 

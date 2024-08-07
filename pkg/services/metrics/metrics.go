@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"sync/atomic"
 
-	"github.com/nspcc-dev/neo-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
 	"go.uber.org/zap"
 )
 

@@ -1,6 +1,6 @@
 package standard
 
-import "github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
+import "github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
 
 // Standard represents smart-contract standard.
 type Standard struct {

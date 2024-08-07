@@ -5,10 +5,10 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/hash"
-	"github.com/nspcc-dev/neo-go/pkg/network/payload"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/hash"
+	"github.com/epicchainlabs/epicchain-go/pkg/network/payload"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // Ledger is enough of Blockchain to satisfy Pool.

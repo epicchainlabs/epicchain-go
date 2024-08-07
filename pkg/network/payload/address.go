@@ -6,8 +6,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/pkg/io"
-	"github.com/nspcc-dev/neo-go/pkg/network/capability"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/network/capability"
 )
 
 // MaxAddrsCount is the maximum number of addresses that could be packed into

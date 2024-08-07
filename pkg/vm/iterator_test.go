@@ -5,11 +5,11 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/random"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/interopnames"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/callflag"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/internal/random"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/interopnames"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/callflag"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/require"
 )
 

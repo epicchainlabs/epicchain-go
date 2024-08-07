@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
 )
 
 func TestGenDeclWithMultiRet(t *testing.T) {

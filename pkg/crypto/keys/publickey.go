@@ -12,11 +12,11 @@ import (
 
 	"github.com/decred/dcrd/dcrec/secp256k1/v4"
 	lru "github.com/hashicorp/golang-lru/v2"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/hash"
-	"github.com/nspcc-dev/neo-go/pkg/encoding/address"
-	"github.com/nspcc-dev/neo-go/pkg/io"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/emit"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/hash"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/address"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/emit"
 )
 
 // coordLen is the number of bytes in serialized X or Y coordinate.

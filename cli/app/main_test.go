@@ -3,9 +3,9 @@ package app_test
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/testcli"
-	"github.com/nspcc-dev/neo-go/internal/versionutil"
-	"github.com/nspcc-dev/neo-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/internal/testcli"
+	"github.com/epicchainlabs/epicchain-go/internal/versionutil"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
 )
 
 func TestCLIVersion(t *testing.T) {

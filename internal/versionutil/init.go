@@ -1,6 +1,6 @@
 package versionutil
 
-import "github.com/nspcc-dev/neo-go/pkg/config"
+import "github.com/epicchainlabs/epicchain-go/pkg/config"
 
 // TestVersion is a NeoGo version that should be used to keep all
 // compiled NEFs the same from run to run for tests.

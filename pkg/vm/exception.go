@@ -4,7 +4,7 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 )
 
 // exceptionHandlingState represents state of the exception handling process.

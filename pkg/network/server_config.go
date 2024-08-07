@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/config/netmode"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/config/netmode"
 	"go.uber.org/zap/zapcore"
 )
 

@@ -7,11 +7,11 @@ import (
 	"text/template"
 	"unicode"
 
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/binding"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest/standard"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/binding"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest/standard"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // The set of constants containing parts of RPC binding template. Each block of code
@@ -400,7 +400,7 @@ func Generate(cfg binding.Config) error {
 	// Strip standard methods from NEP-XX packages.
 	for _, std := range cfg.Manifest.SupportedStandards {
 		if std == manifest.NEP11StandardName {
-			imports["github.com/nspcc-dev/neo-go/pkg/rpcclient/nep11"] = struct{}{}
+			imports["github.com/epicchainlabs/epicchain-go/pkg/rpcclient/nep11"] = struct{}{}
 			if standard.ComplyABI(cfg.Manifest, standard.Nep11Divisible) == nil {
 				mfst.ABI.Methods = dropStdMethods(mfst.ABI.Methods, standard.Nep11Divisible)
 				ctr.IsNep11D = true
@@ -413,7 +413,7 @@ func Generate(cfg binding.Config) error {
 		}
 		if std == manifest.NEP17StandardName && standard.ComplyABI(cfg.Manifest, standard.Nep17) == nil {
 			mfst.ABI.Methods = dropStdMethods(mfst.ABI.Methods, standard.Nep17)
-			imports["github.com/nspcc-dev/neo-go/pkg/rpcclient/nep17"] = struct{}{}
+			imports["github.com/epicchainlabs/epicchain-go/pkg/rpcclient/nep17"] = struct{}{}
 			ctr.IsNep17 = true
 			mfst.ABI.Events = dropStdEvents(mfst.ABI.Events, standard.Nep17)
 			break // Can't be NEP-11 at the same time.
@@ -531,19 +531,19 @@ func extendedTypeToGo(et binding.ExtendedType, named map[string]binding.Extended
 	case smartcontract.StringType:
 		return "string", ""
 	case smartcontract.Hash160Type:
-		return "util.Uint160", "github.com/nspcc-dev/neo-go/pkg/util"
+		return "util.Uint160", "github.com/epicchainlabs/epicchain-go/pkg/util"
 	case smartcontract.Hash256Type:
-		return "util.Uint256", "github.com/nspcc-dev/neo-go/pkg/util"
+		return "util.Uint256", "github.com/epicchainlabs/epicchain-go/pkg/util"
 	case smartcontract.PublicKeyType:
-		return "*keys.PublicKey", "github.com/nspcc-dev/neo-go/pkg/crypto/keys"
+		return "*keys.PublicKey", "github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
 	case smartcontract.SignatureType:
 		return "[]byte", ""
 	case smartcontract.ArrayType:
 		if len(et.Name) > 0 {
-			return "*" + toTypeName(et.Name), "github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+			return "*" + toTypeName(et.Name), "github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 		} else if et.Value != nil {
 			if et.Value.Base == smartcontract.PublicKeyType { // Special array wrapper.
-				return "keys.PublicKeys", "github.com/nspcc-dev/neo-go/pkg/crypto/keys"
+				return "keys.PublicKeys", "github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
 			}
 			sub, pkg := extendedTypeToGo(*et.Value, named)
 			return "[]" + sub, pkg
@@ -558,7 +558,7 @@ func extendedTypeToGo(et binding.ExtendedType, named map[string]binding.Extended
 		} else {
 			vt = "any"
 		}
-		return "map[" + kt + "]" + vt, "github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+		return "map[" + kt + "]" + vt, "github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	case smartcontract.InteropInterfaceType:
 		return "any", ""
 	case smartcontract.VoidType:
@@ -720,7 +720,7 @@ func scTemplateToRPC(cfg binding.Config, ctr ContractTmpl, imports map[string]st
 		} else {
 			ctr.Methods[i].Comment = fmt.Sprintf("creates a transaction invoking `%s` method of the contract.", ctr.Methods[i].NameABI)
 			if ctr.Methods[i].ReturnType == "bool" {
-				imports["github.com/nspcc-dev/neo-go/pkg/smartcontract"] = struct{}{}
+				imports["github.com/epicchainlabs/epicchain-go/pkg/smartcontract"] = struct{}{}
 			}
 		}
 	}
@@ -766,8 +766,8 @@ func scTemplateToRPC(cfg binding.Config, ctr ContractTmpl, imports map[string]st
 	}
 
 	if len(ctr.CustomEvents) > 0 {
-		imports["github.com/nspcc-dev/neo-go/pkg/neorpc/result"] = struct{}{}
-		imports["github.com/nspcc-dev/neo-go/pkg/vm/stackitem"] = struct{}{}
+		imports["github.com/epicchainlabs/epicchain-go/pkg/neorpc/result"] = struct{}{}
+		imports["github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"] = struct{}{}
 		imports["fmt"] = struct{}{}
 		imports["errors"] = struct{}{}
 	}
@@ -778,13 +778,13 @@ func scTemplateToRPC(cfg binding.Config, ctr ContractTmpl, imports map[string]st
 			abim := cfg.Manifest.ABI.GetMethod(ctr.SafeMethods[i].NameABI, len(ctr.SafeMethods[i].Arguments))
 			if abim.ReturnType == smartcontract.InteropInterfaceType {
 				imports["github.com/google/uuid"] = struct{}{}
-				imports["github.com/nspcc-dev/neo-go/pkg/vm/stackitem"] = struct{}{}
-				imports["github.com/nspcc-dev/neo-go/pkg/neorpc/result"] = struct{}{}
+				imports["github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"] = struct{}{}
+				imports["github.com/epicchainlabs/epicchain-go/pkg/neorpc/result"] = struct{}{}
 				ctr.SafeMethods[i].ReturnType = "uuid.UUID, result.Iterator"
 				ctr.SafeMethods[i].Unwrapper = "SessionIterator"
 				ctr.HasIterator = true
 			} else {
-				imports["github.com/nspcc-dev/neo-go/pkg/vm/stackitem"] = struct{}{}
+				imports["github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"] = struct{}{}
 				ctr.SafeMethods[i].ReturnType = "any"
 				ctr.SafeMethods[i].Unwrapper = "Item"
 			}
@@ -803,7 +803,7 @@ func scTemplateToRPC(cfg binding.Config, ctr ContractTmpl, imports map[string]st
 		case "[]byte":
 			ctr.SafeMethods[i].Unwrapper = "Bytes"
 		case "[]any":
-			imports["github.com/nspcc-dev/neo-go/pkg/vm/stackitem"] = struct{}{}
+			imports["github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"] = struct{}{}
 			ctr.SafeMethods[i].ReturnType = "[]stackitem.Item"
 			ctr.SafeMethods[i].Unwrapper = "Array"
 		case "*stackitem.Map":
@@ -828,15 +828,15 @@ func scTemplateToRPC(cfg binding.Config, ctr ContractTmpl, imports map[string]st
 		}
 	}
 
-	imports["github.com/nspcc-dev/neo-go/pkg/util"] = struct{}{}
+	imports["github.com/epicchainlabs/epicchain-go/pkg/util"] = struct{}{}
 	if len(ctr.SafeMethods) > 0 {
-		imports["github.com/nspcc-dev/neo-go/pkg/rpcclient/unwrap"] = struct{}{}
+		imports["github.com/epicchainlabs/epicchain-go/pkg/rpcclient/unwrap"] = struct{}{}
 		if !(ctr.IsNep17 || ctr.IsNep11D || ctr.IsNep11ND) {
-			imports["github.com/nspcc-dev/neo-go/pkg/neorpc/result"] = struct{}{}
+			imports["github.com/epicchainlabs/epicchain-go/pkg/neorpc/result"] = struct{}{}
 		}
 	}
 	if len(ctr.Methods) > 0 {
-		imports["github.com/nspcc-dev/neo-go/pkg/core/transaction"] = struct{}{}
+		imports["github.com/epicchainlabs/epicchain-go/pkg/core/transaction"] = struct{}{}
 	}
 	if len(ctr.Methods) > 0 || ctr.IsNep17 || ctr.IsNep11D || ctr.IsNep11ND {
 		ctr.HasWriter = true

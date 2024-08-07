@@ -3,12 +3,12 @@ package native
 import (
 	"strings"
 
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/interopnames"
-	"github.com/nspcc-dev/neo-go/pkg/io"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/emit"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/interopnames"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/emit"
 )
 
 // Contracts is a set of registered native contracts.

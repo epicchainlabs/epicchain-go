@@ -1,7 +1,7 @@
 package transaction
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
 )
 
 // NotValidBefore represents attribute with the height transaction is not valid before.

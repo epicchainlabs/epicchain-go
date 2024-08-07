@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage"
 	"github.com/stretchr/testify/require"
 )
 

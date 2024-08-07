@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/nspcc-dev/neo-go/cli/options"
-	"github.com/nspcc-dev/neo-go/cli/paramcontext"
-	"github.com/nspcc-dev/neo-go/cli/query"
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/cli/options"
+	"github.com/epicchainlabs/epicchain-go/cli/paramcontext"
+	"github.com/epicchainlabs/epicchain-go/cli/query"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
 	"github.com/urfave/cli"
 )
 

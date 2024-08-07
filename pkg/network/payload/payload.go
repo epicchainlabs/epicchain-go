@@ -1,6 +1,6 @@
 package payload
 
-import "github.com/nspcc-dev/neo-go/pkg/io"
+import "github.com/epicchainlabs/epicchain-go/pkg/io"
 
 // MaxSize is the maximum payload size in decompressed form.
 const MaxSize = 0x02000000

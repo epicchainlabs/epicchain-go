@@ -9,17 +9,17 @@ import (
 
 	"github.com/consensys/gnark-crypto/ecc/bls12-381/fr"
 	"github.com/decred/dcrd/dcrec/secp256k1/v4"
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core/dao"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop"
-	"github.com/nspcc-dev/neo-go/pkg/core/native/nativenames"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/hash"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/keys"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/callflag"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/dao"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native/nativenames"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/hash"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/callflag"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/twmb/murmur3"
 	"golang.org/x/crypto/sha3"
 )
@@ -269,7 +269,7 @@ func scalarFromBytes(bytes []byte, neg bool) (*fr.Element, error) {
 	}
 	// The input bytes are in the LE form, so we can't use fr.Element.SetBytesCanonical as far
 	// as it accepts BE. Confirmed by https://github.com/neo-project/neo/issues/2647#issuecomment-1129849870
-	// and by https://github.com/nspcc-dev/neo-go/pull/3043#issuecomment-1733424840.
+	// and by https://github.com/epicchainlabs/epicchain-go/pull/3043#issuecomment-1733424840.
 	v, err := fr.LittleEndian.Element((*[fr.Bytes]byte)(bytes))
 	if err != nil {
 		return nil, fmt.Errorf("invalid multiplier: failed to decode scalar: %w", err)

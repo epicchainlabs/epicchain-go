@@ -4,10 +4,10 @@ import (
 	"errors"
 
 	"github.com/nspcc-dev/dbft"
-	"github.com/nspcc-dev/neo-go/pkg/config/netmode"
-	coreb "github.com/nspcc-dev/neo-go/pkg/core/block"
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/config/netmode"
+	coreb "github.com/epicchainlabs/epicchain-go/pkg/core/block"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // neoBlock is a wrapper of a core.Block which implements

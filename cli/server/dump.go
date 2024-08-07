@@ -6,8 +6,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/storage"
-	"github.com/nspcc-dev/neo-go/pkg/core/storage/dboper"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage/dboper"
 )
 
 type dump []blockDump

@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/interopnames"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/keys"
-	"github.com/nspcc-dev/neo-go/pkg/io"
-	"github.com/nspcc-dev/neo-go/pkg/vm/emit"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/interopnames"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/emit"
 )
 
 // CreateMultiSigRedeemScript creates an "m out of n" type verification script

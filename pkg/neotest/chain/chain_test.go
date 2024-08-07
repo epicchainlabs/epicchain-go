@@ -3,7 +3,7 @@ package chain
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/neotest"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest"
 	"github.com/stretchr/testify/require"
 )
 

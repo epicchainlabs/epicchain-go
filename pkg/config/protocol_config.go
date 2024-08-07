@@ -6,8 +6,8 @@ import (
 	"sort"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/pkg/config/netmode"
-	"github.com/nspcc-dev/neo-go/pkg/encoding/fixedn"
+	"github.com/epicchainlabs/epicchain-go/pkg/config/netmode"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/fixedn"
 )
 
 // ProtocolConfiguration represents the protocol config.

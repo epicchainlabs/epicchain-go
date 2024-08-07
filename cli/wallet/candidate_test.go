@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/testcli"
+	"github.com/epicchainlabs/epicchain-go/internal/testcli"
 	"github.com/stretchr/testify/require"
 )
 

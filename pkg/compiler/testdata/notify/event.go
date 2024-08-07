@@ -1,6 +1,6 @@
 package notify
 
-import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 
 // Value is the constant we use.
 const Value = 42

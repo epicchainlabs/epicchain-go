@@ -33,9 +33,9 @@ func NewOverrideFromString(s string) Override {
 
 	switch over.Package {
 	case "iterator", "storage":
-		over.Package = "github.com/nspcc-dev/neo-go/pkg/interop/" + over.Package
+		over.Package = "github.com/epicchainlabs/epicchain-go/pkg/interop/" + over.Package
 	case "ledger", "management":
-		over.Package = "github.com/nspcc-dev/neo-go/pkg/interop/native/" + over.Package
+		over.Package = "github.com/epicchainlabs/epicchain-go/pkg/interop/native/" + over.Package
 	}
 
 	slashIndex := strings.LastIndexByte(s, '/')

@@ -3,7 +3,7 @@ package rpcsrv
 import (
 	"net/http"
 
-	"github.com/nspcc-dev/neo-go/pkg/neorpc"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc"
 )
 
 // abstractResult is an interface which represents either single JSON-RPC 2.0 response

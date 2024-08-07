@@ -8,11 +8,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/internal/testcli"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/trigger"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/vmstate"
-	"github.com/nspcc-dev/neo-go/pkg/wallet"
+	"github.com/epicchainlabs/epicchain-go/internal/testcli"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/trigger"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/vmstate"
+	"github.com/epicchainlabs/epicchain-go/pkg/wallet"
 	"github.com/stretchr/testify/require"
 )
 

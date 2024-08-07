@@ -8,24 +8,24 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/contracts"
-	"github.com/nspcc-dev/neo-go/internal/random"
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/core/block"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/core/native"
-	"github.com/nspcc-dev/neo-go/pkg/core/native/nativenames"
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/neotest"
-	"github.com/nspcc-dev/neo-go/pkg/neotest/chain"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/callflag"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/trigger"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/internal/contracts"
+	"github.com/epicchainlabs/epicchain-go/internal/random"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/block"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native/nativenames"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest/chain"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/callflag"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/trigger"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/require"
 )
 
@@ -207,11 +207,11 @@ func TestSnapshotIsolation_Exceptions(t *testing.T) {
 	// Contract A puts value in the storage, emits notifications and panics.
 	srcA := `package contractA
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-			"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-			"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 		)
-		func DoAndPanic(key, value []byte, nNtf int) int { // avoid https://github.com/nspcc-dev/neo-go/issues/2509
+		func DoAndPanic(key, value []byte, nNtf int) int { // avoid https://github.com/epicchainlabs/epicchain-go/issues/2509
 			c := storage.GetContext()
 			storage.Put(c, key, value)
 			for i := 0; i < nNtf; i++ {
@@ -266,11 +266,11 @@ func TestSnapshotIsolation_Exceptions(t *testing.T) {
 	// and storage changes are available from different contexts.
 	srcB := `package contractB
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop"
-			"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-			"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-			"github.com/nspcc-dev/neo-go/pkg/interop/storage"
-			"github.com/nspcc-dev/neo-go/pkg/interop/util"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 		)
 		var caughtKey = []byte("caught")
 		func DoAndCatch(shouldRecover bool, keyA, valueA, keyB, valueB []byte, nNtfA, nNtfB1, nNtfB2 int) {
@@ -357,8 +357,8 @@ func TestSnapshotIsolation_NestedContextException(t *testing.T) {
 
 	srcA := `package contractA
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-			"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 		)
 		func CallA() {
 			runtime.Notify("Calling A")
@@ -421,9 +421,9 @@ func TestSnapshotIsolation_CallToItself(t *testing.T) {
 	// Contract A calls method of self and throws if storage changes made by Do are unavailable after call to it.
 	srcA := `package contractA
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-			"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-			"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 		)
 		var key = []byte("key")
 		func Test() {
@@ -465,7 +465,7 @@ func TestSnapshotIsolation_CallToItself(t *testing.T) {
 	ctrInvoker.Invoke(t, stackitem.Null{}, "check")
 }
 
-// This test is written to check https://github.com/nspcc-dev/neo-go/issues/2509
+// This test is written to check https://github.com/epicchainlabs/epicchain-go/issues/2509
 // and https://github.com/neo-project/neo/pull/2745#discussion_r879167180.
 func TestRET_after_FINALLY_PanicInsideVoidMethod(t *testing.T) {
 	bc, acc := chain.NewSingle(t)
@@ -496,8 +496,8 @@ func TestRET_after_FINALLY_PanicInsideVoidMethod(t *testing.T) {
 	// Contract B calls A and catches the exception thrown by A.
 	srcB := `package contractB
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop"
-			"github.com/nspcc-dev/neo-go/pkg/interop/contract"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
 		)
 		func Catch() {
 			defer func() {
@@ -531,7 +531,7 @@ func TestRET_after_FINALLY_CallNonVoidAfterVoidMethod(t *testing.T) {
 
 	// Contract A has two methods. One of them has no return value, and the other has it.
 	srcA := `package contractA
-		import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 		func NoRet() {
 			runtime.Log("no ret")
 		}
@@ -556,9 +556,9 @@ func TestRET_after_FINALLY_CallNonVoidAfterVoidMethod(t *testing.T) {
 	// Contract B calls A in try-catch block.
 	srcB := `package contractB
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop"
-			"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-			"github.com/nspcc-dev/neo-go/pkg/interop/util"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 		)
 		func CallAInTryCatch() {
 			defer func() {

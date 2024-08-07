@@ -8,7 +8,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/testserdes"
+	"github.com/epicchainlabs/epicchain-go/internal/testserdes"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/yaml.v3"
 )

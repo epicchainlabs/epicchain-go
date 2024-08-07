@@ -1,11 +1,11 @@
-module github.com/nspcc-dev/neo-go/examples/zkp/cubic
+module github.com/epicchainlabs/epicchain-go/examples/zkp/cubic
 
 go 1.20
 
 require (
 	github.com/consensys/gnark v0.9.1
 	github.com/consensys/gnark-crypto v0.12.2-0.20231013160410-1f65e75b6dfb
-	github.com/nspcc-dev/neo-go v0.103.1
+	github.com/epicchainlabs/epicchain-go v0.103.1
 	github.com/stretchr/testify v1.8.4
 )
 
@@ -33,7 +33,7 @@ require (
 	github.com/mmcloughlin/addchain v0.4.0 // indirect
 	github.com/mr-tron/base58 v1.2.0 // indirect
 	github.com/nspcc-dev/go-ordered-json v0.0.0-20231123160306-3374ff1e7a3c // indirect
-	github.com/nspcc-dev/neo-go/pkg/interop v0.0.0-20240521091047-78685785716d // indirect
+	github.com/epicchainlabs/epicchain-go/pkg/interop v0.0.0-20240521091047-78685785716d // indirect
 	github.com/nspcc-dev/rfc6979 v0.2.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/prometheus/client_golang v1.13.0 // indirect

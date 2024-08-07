@@ -3,7 +3,7 @@ package result
 import (
 	"encoding/json"
 
-	"github.com/nspcc-dev/neo-go/pkg/crypto/keys"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
 )
 
 // Validator is used for the representation of consensus node data in the JSON-RPC

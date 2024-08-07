@@ -3,7 +3,7 @@ package storage
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/storage/dboper"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage/dboper"
 	"github.com/stretchr/testify/require"
 )
 

@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/interop"
-	"github.com/nspcc-dev/neo-go/pkg/core/native"
-	"github.com/nspcc-dev/neo-go/pkg/core/native/nativenames"
-	"github.com/nspcc-dev/neo-go/pkg/neotest"
-	"github.com/nspcc-dev/neo-go/pkg/neotest/chain"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native/nativenames"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest/chain"
 	"github.com/stretchr/testify/require"
 )
 

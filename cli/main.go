@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/nspcc-dev/neo-go/cli/app"
+	"github.com/epicchainlabs/epicchain-go/cli/app"
 )
 
 func main() {

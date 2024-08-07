@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient"
 	"go.uber.org/zap"
 )
 

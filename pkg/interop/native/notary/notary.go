@@ -6,9 +6,9 @@ networks. To use it, you need to have this extension enabled on the network.
 package notary
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 )
 
 // Hash represents Notary contract hash.

@@ -1,8 +1,8 @@
 package standard
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
 )
 
 // Nep11Payable contains NEP-11's onNEP11Payment method definition.

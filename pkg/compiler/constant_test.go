@@ -38,7 +38,7 @@ func TestShortHandMultiConst(t *testing.T) {
 
 func TestByteConstant(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/convert"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/convert"
 	const a byte = 0xFF
 	func Main() int {
 		x := convert.ToInteger(a)

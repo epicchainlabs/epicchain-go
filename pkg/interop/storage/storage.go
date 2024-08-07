@@ -7,8 +7,8 @@ contract.
 package storage
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop/iterator"
-	"github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/iterator"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 )
 
 // Context represents storage context that is mandatory for Put/Get/Delete

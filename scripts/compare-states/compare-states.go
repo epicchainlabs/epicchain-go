@@ -7,8 +7,8 @@ import (
 	"os"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 	"github.com/pmezard/go-difflib/difflib"
 	"github.com/urfave/cli"
 )

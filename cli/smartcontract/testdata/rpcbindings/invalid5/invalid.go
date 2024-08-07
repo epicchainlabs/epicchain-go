@@ -1,6 +1,6 @@
 package invalid5
 
-import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 
 type NamedStruct struct {
 	SomeInt int

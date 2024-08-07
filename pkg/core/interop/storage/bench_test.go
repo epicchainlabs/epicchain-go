@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/random"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/iterator"
-	istorage "github.com/nspcc-dev/neo-go/pkg/core/interop/storage"
-	"github.com/nspcc-dev/neo-go/pkg/core/native"
-	"github.com/nspcc-dev/neo-go/pkg/core/state"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/internal/random"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/iterator"
+	istorage "github.com/epicchainlabs/epicchain-go/pkg/core/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/state"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/require"
 )
 

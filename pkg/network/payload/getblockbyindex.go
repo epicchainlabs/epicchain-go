@@ -3,7 +3,7 @@ package payload
 import (
 	"fmt"
 
-	"github.com/nspcc-dev/neo-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
 )
 
 // GetBlockByIndex payload.

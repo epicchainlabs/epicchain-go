@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/keytestcases"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/hash"
+	"github.com/epicchainlabs/epicchain-go/internal/keytestcases"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/hash"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

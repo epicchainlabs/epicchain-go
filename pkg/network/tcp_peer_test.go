@@ -4,7 +4,7 @@ import (
 	"net"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/network/payload"
+	"github.com/epicchainlabs/epicchain-go/pkg/network/payload"
 	"github.com/stretchr/testify/require"
 )
 

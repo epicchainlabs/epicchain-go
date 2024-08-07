@@ -4,7 +4,7 @@ import (
 	"go/ast"
 	"go/types"
 
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 )
 
 func (c *codegen) typeAndValueOf(e ast.Expr) types.TypeAndValue {

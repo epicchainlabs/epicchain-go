@@ -4,13 +4,13 @@ import (
 	"io"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/cli/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core/state"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/nef"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/cli/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/state"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/nef"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 	"github.com/stretchr/testify/require"
 )
 

@@ -16,9 +16,9 @@ import (
 	"github.com/consensys/gnark/frontend"
 	"github.com/consensys/gnark/frontend/cs/r1cs"
 	"github.com/consensys/gnark/test"
-	"github.com/nspcc-dev/neo-go/pkg/neotest"
-	"github.com/nspcc-dev/neo-go/pkg/neotest/chain"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/zkpbinding"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest/chain"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/zkpbinding"
 	"github.com/stretchr/testify/require"
 )
 

@@ -9,21 +9,21 @@ REV="$1"
 root="$(git rev-parse --show-toplevel)"
 
 cd "$root" || exit 1
-go get github.com/nspcc-dev/neo-go/pkg/interop@"$REV"
+go get github.com/epicchainlabs/epicchain-go/pkg/interop@"$REV"
 go mod tidy
 
 for dir in "$root"/examples/*/; do
 	cd "$dir" || exit 1
-	go get github.com/nspcc-dev/neo-go/pkg/interop@"$REV"
+	go get github.com/epicchainlabs/epicchain-go/pkg/interop@"$REV"
 	go mod tidy
 done
 
 for dir in "$root"/examples/zkp/*/; do
 	cd "$dir" || exit 1
-	go get github.com/nspcc-dev/neo-go/pkg/interop@"$REV"
+	go get github.com/epicchainlabs/epicchain-go/pkg/interop@"$REV"
 	go mod tidy
 done
 
 cd "$root"/internal/contracts/oracle_contract || exit 1
-go get github.com/nspcc-dev/neo-go/pkg/interop@"$REV"
+go get github.com/epicchainlabs/epicchain-go/pkg/interop@"$REV"
 go mod tidy

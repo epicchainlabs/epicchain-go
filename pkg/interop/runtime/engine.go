@@ -1,9 +1,9 @@
 package runtime
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/ledger"
-	"github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 )
 
 // GetScriptContainer returns the transaction that initially triggered current

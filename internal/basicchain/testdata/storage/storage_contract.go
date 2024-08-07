@@ -6,8 +6,8 @@ The contract is aimed to test iterator sessions RPC API.
 package storage
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop/iterator"
-	"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/iterator"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 )
 
 // valuesCount is the amount of stored values.

@@ -3,7 +3,7 @@ package fee
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
 )
 
 const feeFactor = 30

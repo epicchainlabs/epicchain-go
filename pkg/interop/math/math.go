@@ -3,7 +3,7 @@ Package math provides access to useful numeric functions available in Neo VM.
 */
 package math
 
-import "github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 
 // Pow returns a^b using POW VM opcode.
 // b must be >= 0 and <= 2^31-1.

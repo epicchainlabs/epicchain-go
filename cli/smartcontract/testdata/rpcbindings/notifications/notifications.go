@@ -1,8 +1,8 @@
 package structs
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 )
 
 func Main() {

@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/internal/fakechain"
-	"github.com/nspcc-dev/neo-go/pkg/core/block"
+	"github.com/epicchainlabs/epicchain-go/internal/fakechain"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/block"
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/zap/zaptest"
 )

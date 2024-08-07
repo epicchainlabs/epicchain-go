@@ -3,8 +3,8 @@ package standard
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
 	"github.com/stretchr/testify/require"
 )
 

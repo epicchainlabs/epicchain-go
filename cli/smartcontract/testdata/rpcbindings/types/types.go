@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
 )
 
 func Bool(b bool) bool {

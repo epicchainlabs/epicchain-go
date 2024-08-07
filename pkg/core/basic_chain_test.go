@@ -6,12 +6,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/internal/basicchain"
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core/chaindump"
-	"github.com/nspcc-dev/neo-go/pkg/io"
-	"github.com/nspcc-dev/neo-go/pkg/neotest"
-	"github.com/nspcc-dev/neo-go/pkg/neotest/chain"
+	"github.com/epicchainlabs/epicchain-go/internal/basicchain"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/chaindump"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest/chain"
 	"github.com/stretchr/testify/require"
 )
 

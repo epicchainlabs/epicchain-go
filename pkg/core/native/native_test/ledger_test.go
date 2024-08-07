@@ -6,16 +6,16 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core/native/nativenames"
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/neotest"
-	"github.com/nspcc-dev/neo-go/pkg/neotest/chain"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
-	"github.com/nspcc-dev/neo-go/pkg/vm/vmstate"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native/nativenames"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest/chain"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/vmstate"
 	"github.com/stretchr/testify/require"
 )
 
@@ -253,9 +253,9 @@ func TestLedger_GetTransactionSignersInteropAPI(t *testing.T) {
 	// After that ensure interop API allows to retrieve signer with CalledByEntry rule-based scope.
 	src := `package callledger
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop/native/ledger"
-			"github.com/nspcc-dev/neo-go/pkg/interop"
-			"github.com/nspcc-dev/neo-go/pkg/interop/util"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 		)
 		func CallLedger(accessValue bool) int {
 			signers := ledger.GetTransactionSigners(interop.Hash256{` + hashStr + `})

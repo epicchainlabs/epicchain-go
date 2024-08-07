@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/block"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/block"
 )
 
 type (

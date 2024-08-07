@@ -4,7 +4,7 @@ import (
 	"sync/atomic"
 
 	"github.com/gorilla/websocket"
-	"github.com/nspcc-dev/neo-go/pkg/neorpc"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc"
 )
 
 type (

@@ -1,8 +1,8 @@
 package payload
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/io"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // MaxMPTHashesCount is the maximum number of the requested MPT nodes hashes.

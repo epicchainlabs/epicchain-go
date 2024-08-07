@@ -1,8 +1,8 @@
 package nep11
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/unwrap"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/unwrap"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // NonDivisibleReader is a reader interface for non-divisble NEP-11 contract.

@@ -1,6 +1,6 @@
 package sub
 
-import "github.com/nspcc-dev/neo-go/pkg/interop/storage"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 
 var Key = "sub"
 

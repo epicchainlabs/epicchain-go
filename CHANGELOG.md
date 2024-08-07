@@ -2735,7 +2735,7 @@ Changes specific to neo-go:
  * we no longer provide bootstrapping 6k block dump for private networks, you
    have 30000000 GAS right in the genesis block and it's not hard to make use
    of it (see
-   [neo-go-sc-wrkshp](https://github.com/nspcc-dev/neo-go-sc-wrkshp) for an
+   [neo-go-sc-wrkshp](https://github.com/epicchainlabs/epicchain-go-sc-wrkshp) for an
    example of how to use it)
  * we have a conversion tool for your old Neo 2 wallets (`wallet convert`
    command), so you can reuse keys on Neo 3 networks
@@ -2746,6 +2746,6 @@ Changes specific to neo-go:
 ## Older versions
 
 Please refer to the [master-2.x branch
-CHANGELOG](https://github.com/nspcc-dev/neo-go/tree/master-2.x/CHANGELOG.md)
+CHANGELOG](https://github.com/epicchainlabs/epicchain-go/tree/master-2.x/CHANGELOG.md)
 for versions prior to 0.90.0 (that are Neo 2 compatible, unlike 0.90.0+ that
 are Neo 3 compatible).

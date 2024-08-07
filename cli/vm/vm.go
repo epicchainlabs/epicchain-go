@@ -5,9 +5,9 @@ import (
 	"os"
 
 	"github.com/chzyer/readline"
-	"github.com/nspcc-dev/neo-go/cli/cmdargs"
-	"github.com/nspcc-dev/neo-go/cli/options"
-	"github.com/nspcc-dev/neo-go/pkg/core/storage/dbconfig"
+	"github.com/epicchainlabs/epicchain-go/cli/cmdargs"
+	"github.com/epicchainlabs/epicchain-go/cli/options"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage/dbconfig"
 	"github.com/urfave/cli"
 )
 

@@ -1,7 +1,7 @@
 package result
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // NEP11Balances is a result for the getnep11balances RPC call.

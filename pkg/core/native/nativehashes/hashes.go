@@ -5,7 +5,7 @@
 // package nativehashes contains hashes of all native contracts in their LE and Uint160 representation.
 package nativehashes
 
-import "github.com/nspcc-dev/neo-go/pkg/util"
+import "github.com/epicchainlabs/epicchain-go/pkg/util"
 
 // Hashes of all native contracts.
 var (

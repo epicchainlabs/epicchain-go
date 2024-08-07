@@ -6,9 +6,9 @@ providing some service on the network.
 package roles
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 )
 
 // Hash represents RoleManagement contract hash.

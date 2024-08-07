@@ -5,20 +5,20 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/testserdes"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/binding"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/internal/testserdes"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/binding"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
 func TestCodeGen_DebugInfo(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop"
-	import "github.com/nspcc-dev/neo-go/pkg/interop/storage"
-	import "github.com/nspcc-dev/neo-go/pkg/interop/native/ledger"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger"
 var staticVar int
 func init() {
 	a := 1

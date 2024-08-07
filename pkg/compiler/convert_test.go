@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/trigger"
-	"github.com/nspcc-dev/neo-go/pkg/vm"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/trigger"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm"
 	"github.com/stretchr/testify/require"
 )
 
@@ -60,7 +60,7 @@ func TestConvert(t *testing.T) {
 	}
 
 	srcBuilder := bytes.NewBuffer([]byte(`package testcase
-		import "github.com/nspcc-dev/neo-go/pkg/interop/convert"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/convert"
 	`))
 	for i, tc := range convertTestCases {
 		name := getFunctionName(tc.returnType)
@@ -186,9 +186,9 @@ func TestTypeConversion(t *testing.T) {
 
 func TestSelectorTypeConversion(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/types"
-	import "github.com/nspcc-dev/neo-go/pkg/interop/util"
-	import "github.com/nspcc-dev/neo-go/pkg/interop"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/types"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/util"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 	func Main() int {
 		var a int
 		if util.Equals(types.Buffer(nil), nil) {

@@ -1,9 +1,9 @@
 package network
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/core/mpt"
-	"github.com/nspcc-dev/neo-go/pkg/network/bqueue"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/mpt"
+	"github.com/epicchainlabs/epicchain-go/pkg/network/bqueue"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // StateSync represents state sync module.

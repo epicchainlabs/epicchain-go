@@ -9,24 +9,24 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/nspcc-dev/neo-go/cli/cmdargs"
-	"github.com/nspcc-dev/neo-go/cli/flags"
-	"github.com/nspcc-dev/neo-go/cli/options"
-	"github.com/nspcc-dev/neo-go/cli/txctx"
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/core/state"
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/neorpc/result"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/actor"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/invoker"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/management"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/binding"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/nef"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm"
-	"github.com/nspcc-dev/neo-go/pkg/wallet"
+	"github.com/epicchainlabs/epicchain-go/cli/cmdargs"
+	"github.com/epicchainlabs/epicchain-go/cli/flags"
+	"github.com/epicchainlabs/epicchain-go/cli/options"
+	"github.com/epicchainlabs/epicchain-go/cli/txctx"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/state"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc/result"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/actor"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/invoker"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/management"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/binding"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/nef"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm"
+	"github.com/epicchainlabs/epicchain-go/pkg/wallet"
 	"github.com/urfave/cli"
 	"gopkg.in/yaml.v3"
 )
@@ -58,7 +58,7 @@ const (
 	// %s is parsed to be the smartContractName.
 	smartContractTmpl = `package %s
 
-import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 
 var notificationName string
 
@@ -379,7 +379,7 @@ func initSmartContract(ctx *cli.Context) error {
 go 1.20
 
 require (
-	github.com/nspcc-dev/neo-go/pkg/interop ` + ver + `
+	github.com/epicchainlabs/epicchain-go/pkg/interop ` + ver + `
 )`)
 	if err := os.WriteFile(filepath.Join(basePath, "go.mod"), gm, 0644); err != nil {
 		return cli.NewExitError(err, 1)

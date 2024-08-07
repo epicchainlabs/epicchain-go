@@ -8,38 +8,38 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/fakechain"
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core"
-	"github.com/nspcc-dev/neo-go/pkg/core/dao"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop"
-	"github.com/nspcc-dev/neo-go/pkg/core/native"
-	"github.com/nspcc-dev/neo-go/pkg/core/native/nativehashes"
-	"github.com/nspcc-dev/neo-go/pkg/core/state"
-	"github.com/nspcc-dev/neo-go/pkg/core/storage"
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/hash"
-	"github.com/nspcc-dev/neo-go/pkg/encoding/address"
-	"github.com/nspcc-dev/neo-go/pkg/encoding/base58"
-	cinterop "github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/neotest"
-	"github.com/nspcc-dev/neo-go/pkg/neotest/chain"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/callflag"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/trigger"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/internal/fakechain"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/dao"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native/nativehashes"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/state"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/hash"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/address"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/base58"
+	cinterop "github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest/chain"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/callflag"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/trigger"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap/zaptest"
 )
 
 func TestTypeConstantSize(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 	var a %T // type declaration is always ok
 	func Main() any {
 		return %#v
@@ -83,8 +83,8 @@ func TestAddressToHash160BuiltinConversion(t *testing.T) {
 	t.Run("builtin conversion", func(t *testing.T) {
 		src := `package foo
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop"
-			"github.com/nspcc-dev/neo-go/pkg/interop/lib/address"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/lib/address"
 		)
 		var addr = address.ToHash160("` + a + `")
 		func Main() interop.Hash160 {
@@ -100,8 +100,8 @@ func TestAddressToHash160BuiltinConversion(t *testing.T) {
 	t.Run("generate code", func(t *testing.T) {
 		src := `package foo
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop"
-			"github.com/nspcc-dev/neo-go/pkg/interop/lib/address"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/lib/address"
 		)
 		var addr = "` + a + `"
 		func Main() interop.Hash160 {
@@ -119,7 +119,7 @@ func TestAddressToHash160BuiltinConversion(t *testing.T) {
 	t.Run("AliasPackage", func(t *testing.T) {
 		src := `
 		package foo
-		import ad "github.com/nspcc-dev/neo-go/pkg/interop/lib/address"
+		import ad "github.com/epicchainlabs/epicchain-go/pkg/interop/lib/address"
 		func Main() []byte {
 			addr1 := ad.ToHash160("` + a + `")
 			addr2 := ad.ToHash160("` + a2 + `")
@@ -139,8 +139,8 @@ func TestInvokeAddressToFromHash160(t *testing.T) {
 	e := neotest.NewExecutor(t, bc, acc, acc)
 	src := `package foo
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop"
-			"github.com/nspcc-dev/neo-go/pkg/interop/lib/address"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/lib/address"
 		)
 		const addr = "` + a + `"
 		func ToHash160(a string) interop.Hash160 {
@@ -184,7 +184,7 @@ func TestInvokeAddressToFromHash160(t *testing.T) {
 
 func TestAbort(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/util"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 	func Main() int {
 		util.Abort()
 		return 1
@@ -196,7 +196,7 @@ func TestAbort(t *testing.T) {
 
 func TestAbortMsg(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/util"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 	func Main() int {
 		util.AbortMsg("some message")
 		return 1
@@ -210,7 +210,7 @@ func TestAbortMsg(t *testing.T) {
 
 func TestAssert(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/util"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 	func Main(ok bool) int {
 		util.Assert(ok)
 		return 1
@@ -230,7 +230,7 @@ func TestAssert(t *testing.T) {
 
 func TestAssertMsg(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/util"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 	func Main(ok bool) int {
 		util.AssertMsg(ok, "some message")
 		return 1
@@ -253,8 +253,8 @@ func TestCurrentSigners(t *testing.T) {
 	e := neotest.NewExecutor(t, bc, acc, acc)
 	src := `package foo
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop/native/ledger"
-			"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 		)
 		func Main() []ledger.TransactionSigner {
 			return runtime.CurrentSigners()
@@ -282,7 +282,7 @@ func TestStdLib_StrLen(t *testing.T) {
 	e := neotest.NewExecutor(t, bc, acc, acc)
 	src := `package foo
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop/native/std"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/native/std"
 		)
 		func Main(s string) int {
 			return std.StrLen(s)
@@ -322,8 +322,8 @@ func TestAppCall(t *testing.T) {
 	barH := hash.Hash160(barCtr.Script)
 
 	srcInner := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	import "github.com/nspcc-dev/neo-go/pkg/interop"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 	var a int = 3
 	func Main(a []byte, b []byte) []byte {
 		panic("Main was called")
@@ -409,7 +409,7 @@ func TestAppCall(t *testing.T) {
 	t.Run("convert from string constant", func(t *testing.T) {
 		src := `
 		package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/contract"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
 		const scriptHash = ` + fmt.Sprintf("%#v", string(ih.BytesBE())) + `
 		func Main() []byte {
 			x := []byte{1, 2}
@@ -428,7 +428,7 @@ func TestAppCall(t *testing.T) {
 	t.Run("convert from var", func(t *testing.T) {
 		src := `
 		package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/contract"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
 		func Main() []byte {
 			x := []byte{1, 2}
 			y := []byte{3, 4}
@@ -446,7 +446,7 @@ func TestAppCall(t *testing.T) {
 
 	t.Run("InitializedGlobals", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/contract"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
 		func Main() int {
 			var addr = []byte(` + fmt.Sprintf("%#v", string(ih.BytesBE())) + `)
 			result := contract.Call(addr, "add3", contract.All, 39)
@@ -461,7 +461,7 @@ func TestAppCall(t *testing.T) {
 
 	t.Run("AliasPackage", func(t *testing.T) {
 		src := `package foo
-		import ee "github.com/nspcc-dev/neo-go/pkg/interop/contract"
+		import ee "github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
 		func Main() int {
 			var addr = []byte(` + fmt.Sprintf("%#v", string(ih.BytesBE())) + `)
 			result := ee.Call(addr, "add3", ee.All, 39)
@@ -476,7 +476,7 @@ func TestAppCall(t *testing.T) {
 func getAppCallScript(h string) string {
 	return `
 	package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/contract"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
 	func Main() []byte {
 		x := []byte{1, 2}
 		y := []byte{3, 4}
@@ -488,7 +488,7 @@ func getAppCallScript(h string) string {
 
 func getCallExScript(h string, flags string) string {
 	return `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/contract"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
 	func Main() int {
 		result := contract.Call(` + h + `, "callInner", ` + flags + `)
 		return result.(int)
@@ -497,7 +497,7 @@ func getCallExScript(h string, flags string) string {
 
 func TestBuiltinDoesNotCompile(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/util"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 	func Main() bool {
 		a := 1
 		b := 2
@@ -520,7 +520,7 @@ func TestBuiltinDoesNotCompile(t *testing.T) {
 
 func TestInteropPackage(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/block"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/block"
 	func Main() int {
 		b := block.Block{}
 		a := block.GetTransactionCount(b)
@@ -531,7 +531,7 @@ func TestInteropPackage(t *testing.T) {
 
 func TestBuiltinPackage(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/util"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/util"
 	func Main() int {
 		if util.Equals(1, 2) { // always returns true
 			return 1
@@ -555,7 +555,7 @@ func TestLenForNil(t *testing.T) {
 func TestCallTConversionErrors(t *testing.T) {
 	t.Run("variable hash", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 		func Main() int {
 			var hash string
 			return neogointernal.CallWithToken(hash, "method", 0).(int)
@@ -565,7 +565,7 @@ func TestCallTConversionErrors(t *testing.T) {
 	})
 	t.Run("bad hash", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 		func Main() int {
 			return neogointernal.CallWithToken("badstring", "method", 0).(int)
 		}`
@@ -574,7 +574,7 @@ func TestCallTConversionErrors(t *testing.T) {
 	})
 	t.Run("variable method", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 		func Main() int {
 			var method string
 			return neogointernal.CallWithToken("\xf5\x63\xea\x40\xbc\x28\x3d\x4d\x0e\x05\xc4\x8e\xa3\x05\xb3\xf2\xa0\x73\x40\xef", method, 0).(int)
@@ -584,7 +584,7 @@ func TestCallTConversionErrors(t *testing.T) {
 	})
 	t.Run("variable flags", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 		func Main() {
 			var flags int
 			neogointernal.CallWithTokenNoRet("\xf5\x63\xea\x40\xbc\x28\x3d\x4d\x0e\x05\xc4\x8e\xa3\x05\xb3\xf2\xa0\x73\x40\xef", "method", flags)
@@ -599,9 +599,9 @@ func TestCallWithVersion(t *testing.T) {
 	e := neotest.NewExecutor(t, bc, acc, acc)
 	src := `package foo
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop"
-			"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-			util "github.com/nspcc-dev/neo-go/pkg/interop/lib/contract"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+			util "github.com/epicchainlabs/epicchain-go/pkg/interop/lib/contract"
 		)
 		func CallWithVersion(hash interop.Hash160, version int, method string) any {
 			return util.CallWithVersion(hash, version, method, contract.All)
@@ -631,7 +631,7 @@ func TestForcedNotifyArgumentsConversion(t *testing.T) {
 		})
 		e := neotest.NewExecutor(t, bc, acc, acc)
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 		const arg4 = 4			// Const value.
 		func WithoutEllipsis() {
 			var arg0 int		// Default value.

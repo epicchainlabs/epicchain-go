@@ -3,8 +3,8 @@ package payload
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/testserdes"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/hash"
+	"github.com/epicchainlabs/epicchain-go/internal/testserdes"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/hash"
 	"github.com/stretchr/testify/require"
 )
 

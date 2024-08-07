@@ -3,7 +3,7 @@ Package iterator provides functions to work with Neo iterators.
 */
 package iterator
 
-import "github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 
 // Iterator represents a Neo iterator, it's an opaque data structure that can
 // be properly created by storage.Find. Iterators range over key-value pairs,

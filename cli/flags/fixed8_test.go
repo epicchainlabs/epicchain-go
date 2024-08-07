@@ -5,7 +5,7 @@ import (
 	"io"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/encoding/fixedn"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/fixedn"
 	"github.com/stretchr/testify/require"
 )
 

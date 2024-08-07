@@ -5,8 +5,8 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/nspcc-dev/neo-go/pkg/io"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 )
 
 //go:generate stringer -type=WitnessAction -linecomment

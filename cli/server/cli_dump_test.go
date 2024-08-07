@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/testcli"
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core/storage/dbconfig"
+	"github.com/epicchainlabs/epicchain-go/internal/testcli"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage/dbconfig"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/yaml.v3"
 )

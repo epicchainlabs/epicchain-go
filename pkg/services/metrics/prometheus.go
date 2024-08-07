@@ -3,7 +3,7 @@ package metrics
 import (
 	"net/http"
 
-	"github.com/nspcc-dev/neo-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"go.uber.org/zap"
 )

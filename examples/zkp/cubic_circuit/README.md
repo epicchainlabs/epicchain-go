@@ -4,9 +4,9 @@
  proof based on BLS12-381 elliptic curve points with the help of
  [consensys/gnark](https://pkg.go.dev/github.com/consensys/gnark). It also shows how to generate, deploy and invoke Verifier
  smart contract to verify proofs for the given circuit on the Neo chain with the
- help of [zkpbindings](https://pkg.go.dev/github.com/nspcc-dev/neo-go/pkg/smartcontract/zkpbinding) NeoGo package. The package also contains circuit
+ help of [zkpbindings](https://pkg.go.dev/github.com/epicchainlabs/epicchain-go/pkg/smartcontract/zkpbinding) NeoGo package. The package also contains circuit
  tests implemented with [gnark/test](https://pkg.go.dev/github.com/consensys/gnark/test) to check the circuit validity and
- end-to-end proof generation/verification test implemented with [neotest](https://pkg.go.dev/github.com/nspcc-dev/neo-go/pkg/neotest)
+ end-to-end proof generation/verification test implemented with [neotest](https://pkg.go.dev/github.com/epicchainlabs/epicchain-go/pkg/neotest)
  to demonstrate how to build, deploy and verify proofs via Verifier smart
  contract for the given circuit.
  

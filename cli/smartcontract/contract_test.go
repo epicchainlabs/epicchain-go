@@ -11,25 +11,25 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/cli/smartcontract"
-	"github.com/nspcc-dev/neo-go/internal/random"
-	"github.com/nspcc-dev/neo-go/internal/testcli"
-	"github.com/nspcc-dev/neo-go/internal/versionutil"
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/storage"
-	"github.com/nspcc-dev/neo-go/pkg/core/state"
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/keys"
-	"github.com/nspcc-dev/neo-go/pkg/encoding/address"
-	"github.com/nspcc-dev/neo-go/pkg/encoding/fixedn"
-	"github.com/nspcc-dev/neo-go/pkg/neorpc/result"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/nef"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/trigger"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
-	"github.com/nspcc-dev/neo-go/pkg/vm/vmstate"
-	"github.com/nspcc-dev/neo-go/pkg/wallet"
+	"github.com/epicchainlabs/epicchain-go/cli/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/internal/random"
+	"github.com/epicchainlabs/epicchain-go/internal/testcli"
+	"github.com/epicchainlabs/epicchain-go/internal/versionutil"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/state"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/address"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/fixedn"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc/result"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/nef"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/trigger"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/vmstate"
+	"github.com/epicchainlabs/epicchain-go/pkg/wallet"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/yaml.v3"
 )
@@ -115,7 +115,7 @@ func TestContractBindings(t *testing.T) {
 	srcPath := filepath.Join(ctrPath, "main.go")
 	require.NoError(t, os.WriteFile(srcPath, []byte(`package testcontract
 import(
-	alias "github.com/nspcc-dev/neo-go/pkg/interop/native/ledger"
+	alias "github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger"
 )
 type MyPair struct {
 	Key int
@@ -172,9 +172,9 @@ func Blocks() []*alias.Block {
 package testcontract
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/ledger"
-	"github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 	"myimport.com/testcontract"
 )
 
@@ -225,7 +225,7 @@ func updateGoMod(dir, moduleName, neoGoPath string) error {
 	}
 
 	replacementPath := filepath.Join(wd, neoGoPath)
-	updatedData = append(updatedData, "\nreplace github.com/nspcc-dev/neo-go/pkg/interop => "+replacementPath+" \n"...)
+	updatedData = append(updatedData, "\nreplace github.com/epicchainlabs/epicchain-go/pkg/interop => "+replacementPath+" \n"...)
 
 	if err := os.WriteFile(goModPath, updatedData, os.ModePerm); err != nil {
 		return fmt.Errorf("failed to write updated go.mod: %w", err)
@@ -248,7 +248,7 @@ func TestDynamicWrapper(t *testing.T) {
 	helperContract := `package testcontract
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
 	verify "myimport.com/testcontract/bindings"
 )
 

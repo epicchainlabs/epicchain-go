@@ -7,7 +7,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/pkg/network/capability"
+	"github.com/epicchainlabs/epicchain-go/pkg/network/capability"
 )
 
 const (

@@ -6,20 +6,20 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/random"
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core/native/nativenames"
-	"github.com/nspcc-dev/neo-go/pkg/core/native/noderoles"
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/keys"
-	"github.com/nspcc-dev/neo-go/pkg/neotest"
-	"github.com/nspcc-dev/neo-go/pkg/neotest/chain"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/notary"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/internal/random"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native/nativenames"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native/noderoles"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest/chain"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/notary"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/require"
 )
 
@@ -192,10 +192,10 @@ func TestNotary_MaliciousWithdrawal(t *testing.T) {
 	// Deploy malicious contract and make Notary deposit for it.
 	src := `package foo
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop/native/notary"
-			"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-			"github.com/nspcc-dev/neo-go/pkg/interop"
-			"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/native/notary"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 		)
 		const (
 			prefixMaxCallDepth = 0x01

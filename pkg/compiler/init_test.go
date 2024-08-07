@@ -68,23 +68,23 @@ func TestInit(t *testing.T) {
 func TestImportOrder(t *testing.T) {
 	t.Run("1,2", func(t *testing.T) {
 		src := `package foo
-		import _ "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/pkg1"
-		import _ "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/pkg2"
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/pkg3"
+		import _ "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/pkg1"
+		import _ "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/pkg2"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/pkg3"
 		func Main() int { return pkg3.A }`
 		eval(t, src, big.NewInt(2))
 	})
 	t.Run("2,1", func(t *testing.T) {
 		src := `package foo
-		import _ "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/pkg2"
-		import _ "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/pkg1"
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/pkg3"
+		import _ "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/pkg2"
+		import _ "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/pkg1"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/pkg3"
 		func Main() int { return pkg3.A }`
 		eval(t, src, big.NewInt(1))
 	})
 	t.Run("InitializeOnce", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/pkg3"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/pkg3"
 		var A = pkg3.A
 		func Main() int { return A }`
 		eval(t, src, big.NewInt(3))
@@ -93,7 +93,7 @@ func TestImportOrder(t *testing.T) {
 
 func TestInitWithNoGlobals(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 	func init() {
 		runtime.Notify("called in '_initialize'")
 	}

@@ -10,26 +10,26 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/contracts"
-	"github.com/nspcc-dev/neo-go/internal/random"
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/interopnames"
-	"github.com/nspcc-dev/neo-go/pkg/core/native"
-	"github.com/nspcc-dev/neo-go/pkg/core/native/nativenames"
-	"github.com/nspcc-dev/neo-go/pkg/core/state"
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/hash"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/keys"
-	"github.com/nspcc-dev/neo-go/pkg/io"
-	"github.com/nspcc-dev/neo-go/pkg/neotest"
-	"github.com/nspcc-dev/neo-go/pkg/neotest/chain"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/callflag"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/trigger"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/emit"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/internal/contracts"
+	"github.com/epicchainlabs/epicchain-go/internal/random"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/interopnames"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native/nativenames"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/state"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/hash"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest/chain"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/callflag"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/trigger"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/emit"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -369,7 +369,7 @@ func TestNEO_Vote(t *testing.T) {
 	require.Equal(t, uint64(0), stateAfterUnvote.LastGasPerVote.Uint64())
 }
 
-// TestNEO_RecursiveDistribution is a test for https://github.com/nspcc-dev/neo-go/pull/2181.
+// TestNEO_RecursiveDistribution is a test for https://github.com/epicchainlabs/epicchain-go/pull/2181.
 func TestNEO_RecursiveGASMint(t *testing.T) {
 	neoCommitteeInvoker := newNeoCommitteeClient(t, 100_0000_0000)
 	neoValidatorInvoker := neoCommitteeInvoker.WithSigners(neoCommitteeInvoker.Validator)
@@ -508,8 +508,8 @@ func TestNEO_GetAccountStateInteropAPI(t *testing.T) {
 	}
 	src := `package testaccountstate
 	  import (
-		  "github.com/nspcc-dev/neo-go/pkg/interop/native/neo"
-		  "github.com/nspcc-dev/neo-go/pkg/interop"
+		  "github.com/epicchainlabs/epicchain-go/pkg/interop/native/neo"
+		  "github.com/epicchainlabs/epicchain-go/pkg/interop"
 	  )
 	  func GetLastGasPerVote() int {
 		  accState := neo.GetAccountState(interop.Hash160{` + hashAStr + `})
@@ -704,7 +704,7 @@ func TestNEO_TransferZeroWithNonZeroBalance(t *testing.T) {
 	})
 }
 
-// https://github.com/nspcc-dev/neo-go/issues/3190
+// https://github.com/epicchainlabs/epicchain-go/issues/3190
 func TestNEO_TransferNonZeroWithZeroBalance(t *testing.T) {
 	neoValidatorsInvoker := newNeoValidatorsClient(t)
 	e := neoValidatorsInvoker.Executor

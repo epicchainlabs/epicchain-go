@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/vm"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
 	"github.com/stretchr/testify/require"
 )
 
@@ -588,7 +588,7 @@ func TestUnusedOptimizedGlobalVar(t *testing.T) {
 	t.Run("imported", func(t *testing.T) {
 		t.Run("init by func call", func(t *testing.T) {
 			src := `package foo
-					import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/globalvar"
+					import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/globalvar"
 					func Main() int {
 						return globalvar.Default
 					}`
@@ -597,7 +597,7 @@ func TestUnusedOptimizedGlobalVar(t *testing.T) {
 		})
 		t.Run("nested var call", func(t *testing.T) {
 			src := `package foo
-					import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/globalvar/nested1"
+					import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/globalvar/nested1"
 					func Main() int {
 						return nested1.C
 					}`
@@ -606,7 +606,7 @@ func TestUnusedOptimizedGlobalVar(t *testing.T) {
 		})
 		t.Run("nested func call", func(t *testing.T) {
 			src := `package foo
-					import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/globalvar/funccall"
+					import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/globalvar/funccall"
 					func Main() int {
 						return funccall.F()
 					}`
@@ -615,7 +615,7 @@ func TestUnusedOptimizedGlobalVar(t *testing.T) {
 		})
 		t.Run("nested method call", func(t *testing.T) {
 			src := `package foo
-					import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/globalvar/funccall"
+					import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/globalvar/funccall"
 					func Main() int {
 						return funccall.GetAge()
 					}`
@@ -642,7 +642,7 @@ func TestChangeGlobal(t *testing.T) {
 		eval(t, src, big.NewInt(42))
 	})
 	t.Run("from other global", func(t *testing.T) {
-		t.Skip("see https://github.com/nspcc-dev/neo-go/issues/2661")
+		t.Skip("see https://github.com/epicchainlabs/epicchain-go/issues/2661")
 		src := `package foo
 				var A = f()
 				var B int
@@ -773,7 +773,7 @@ func TestContractWithNoMain(t *testing.T) {
 
 func TestMultipleFiles(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/multi"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/multi"
 	func Main() int {
 		return multi.Sum()
 	}`
@@ -783,7 +783,7 @@ func TestMultipleFiles(t *testing.T) {
 func TestExportedVariable(t *testing.T) {
 	t.Run("Use", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/multi"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/multi"
 		func Main() int {
 			return multi.SomeVar12
 		}`
@@ -791,7 +791,7 @@ func TestExportedVariable(t *testing.T) {
 	})
 	t.Run("ChangeAndUse", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/multi"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/multi"
 		func Main() int {
 			multi.SomeVar12 = 10
 			return multi.Sum()
@@ -800,7 +800,7 @@ func TestExportedVariable(t *testing.T) {
 	})
 	t.Run("PackageAlias", func(t *testing.T) {
 		src := `package foo
-		import kek "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/multi"
+		import kek "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/multi"
 		func Main() int {
 			kek.SomeVar12 = 10
 			return kek.Sum()
@@ -809,7 +809,7 @@ func TestExportedVariable(t *testing.T) {
 	})
 	t.Run("DifferentName", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/strange"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/strange"
 		func Main() int {
 			normal.NormalVar = 42
 			return normal.NormalVar
@@ -818,7 +818,7 @@ func TestExportedVariable(t *testing.T) {
 	})
 	t.Run("MultipleEqualNames", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/multi"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/multi"
 		var SomeVar12 = 1
 		func Main() int {
 			SomeVar30 := 3
@@ -834,7 +834,7 @@ func TestExportedVariable(t *testing.T) {
 func TestExportedConst(t *testing.T) {
 	t.Run("with vars", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/multi"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/multi"
 		func Main() int {
 			return multi.SomeConst
 		}`
@@ -842,7 +842,7 @@ func TestExportedConst(t *testing.T) {
 	})
 	t.Run("const only", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/constonly"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/constonly"
 		func Main() int {
 			return constonly.Answer
 		}`
@@ -853,7 +853,7 @@ func TestExportedConst(t *testing.T) {
 func TestMultipleFuncSameName(t *testing.T) {
 	t.Run("Simple", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/multi"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/multi"
 		func Main() int {
 			return multi.Sum() + Sum()
 		}
@@ -864,7 +864,7 @@ func TestMultipleFuncSameName(t *testing.T) {
 	})
 	t.Run("WithMethod", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/foo"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/foo"
 		type Foo struct{}
 		func (f Foo) Bar() int { return 11 }
 		func Bar() int { return 22 }

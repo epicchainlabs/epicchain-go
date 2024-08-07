@@ -3,7 +3,7 @@ package payload
 import (
 	"errors"
 
-	"github.com/nspcc-dev/neo-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
 )
 
 // MPTData represents a set of serialized MPT nodes.

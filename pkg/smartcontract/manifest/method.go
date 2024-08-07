@@ -3,8 +3,8 @@ package manifest
 import (
 	"errors"
 
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 )
 
 // Method represents method's metadata.

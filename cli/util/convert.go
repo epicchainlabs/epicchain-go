@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/nspcc-dev/neo-go/cli/flags"
-	"github.com/nspcc-dev/neo-go/cli/options"
-	"github.com/nspcc-dev/neo-go/cli/txctx"
-	vmcli "github.com/nspcc-dev/neo-go/cli/vm"
-	"github.com/nspcc-dev/neo-go/pkg/vm"
+	"github.com/epicchainlabs/epicchain-go/cli/flags"
+	"github.com/epicchainlabs/epicchain-go/cli/options"
+	"github.com/epicchainlabs/epicchain-go/cli/txctx"
+	vmcli "github.com/epicchainlabs/epicchain-go/cli/vm"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm"
 	"github.com/urfave/cli"
 )
 

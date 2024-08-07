@@ -10,10 +10,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/cli/server"
-	"github.com/nspcc-dev/neo-go/internal/testcli"
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core/storage/dbconfig"
+	"github.com/epicchainlabs/epicchain-go/cli/server"
+	"github.com/epicchainlabs/epicchain-go/internal/testcli"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage/dbconfig"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/yaml.v3"
 )

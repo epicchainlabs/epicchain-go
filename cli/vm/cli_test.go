@@ -19,29 +19,29 @@ import (
 	"time"
 
 	"github.com/chzyer/readline"
-	"github.com/nspcc-dev/neo-go/cli/cmdargs"
-	"github.com/nspcc-dev/neo-go/cli/paramcontext"
-	"github.com/nspcc-dev/neo-go/internal/basicchain"
-	"github.com/nspcc-dev/neo-go/internal/random"
-	"github.com/nspcc-dev/neo-go/internal/versionutil"
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/config/netmode"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/interopnames"
-	"github.com/nspcc-dev/neo-go/pkg/core/state"
-	"github.com/nspcc-dev/neo-go/pkg/core/storage"
-	"github.com/nspcc-dev/neo-go/pkg/core/storage/dbconfig"
-	"github.com/nspcc-dev/neo-go/pkg/core/storage/dboper"
-	"github.com/nspcc-dev/neo-go/pkg/encoding/address"
-	"github.com/nspcc-dev/neo-go/pkg/io"
-	"github.com/nspcc-dev/neo-go/pkg/neotest"
-	"github.com/nspcc-dev/neo-go/pkg/neotest/chain"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/callflag"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm"
-	"github.com/nspcc-dev/neo-go/pkg/vm/emit"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/cli/cmdargs"
+	"github.com/epicchainlabs/epicchain-go/cli/paramcontext"
+	"github.com/epicchainlabs/epicchain-go/internal/basicchain"
+	"github.com/epicchainlabs/epicchain-go/internal/random"
+	"github.com/epicchainlabs/epicchain-go/internal/versionutil"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/config/netmode"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/interopnames"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/state"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage/dbconfig"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage/dboper"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/address"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest/chain"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/callflag"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/emit"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/require"
 )
 
@@ -350,9 +350,9 @@ func prepareLoadgoSrc(t *testing.T, tmpDir, src string) string {
 	require.NoError(t, err)
 	goMod := []byte(`module test.example/kek
 require (
-	github.com/nspcc-dev/neo-go/pkg/interop v0.0.0
+	github.com/epicchainlabs/epicchain-go/pkg/interop v0.0.0
 )
-replace github.com/nspcc-dev/neo-go/pkg/interop => ` + filepath.Join(wd, "../../pkg/interop") + `
+replace github.com/epicchainlabs/epicchain-go/pkg/interop => ` + filepath.Join(wd, "../../pkg/interop") + `
 go 1.20`)
 	require.NoError(t, os.WriteFile(filepath.Join(tmpDir, "go.mod"), goMod, os.ModePerm))
 	return filename
@@ -508,7 +508,7 @@ func TestLoad(t *testing.T) {
 
 		t.Run("check calling flags", func(t *testing.T) {
 			srcAllowNotify := `package kek
-		import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 		func Main() int {
 			runtime.Log("Hello, world!")
 			return 1
@@ -526,8 +526,8 @@ func TestLoad(t *testing.T) {
 		t.Run("check signers", func(t *testing.T) {
 			srcCheckWitness := `package kek
 		import (
-			"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-			"github.com/nspcc-dev/neo-go/pkg/interop/lib/address"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+			"github.com/epicchainlabs/epicchain-go/pkg/interop/lib/address"
 		)
 		func Main() bool {
 			var owner = address.ToHash160("` + ownerAddress + `")
@@ -630,7 +630,7 @@ func TestLoad(t *testing.T) {
 func TestLoad_RunWithCALLT(t *testing.T) {
 	// Our smart compiler will generate CALLT instruction for the following StdLib call:
 	src := `package kek
-		import "github.com/nspcc-dev/neo-go/pkg/interop/native/std"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/native/std"
 		func Main() int {
 			return std.Atoi("123", 10)
 		}`

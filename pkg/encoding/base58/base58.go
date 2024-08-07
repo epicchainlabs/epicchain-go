@@ -5,7 +5,7 @@ import (
 	"errors"
 
 	"github.com/mr-tron/base58"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/hash"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/hash"
 )
 
 // CheckDecode implements base58-encoded string decoding with a hash-based

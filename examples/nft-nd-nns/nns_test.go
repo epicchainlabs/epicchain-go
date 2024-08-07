@@ -4,13 +4,13 @@ import (
 	"strings"
 	"testing"
 
-	nns "github.com/nspcc-dev/neo-go/examples/nft-nd-nns"
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/storage"
-	"github.com/nspcc-dev/neo-go/pkg/neotest"
-	"github.com/nspcc-dev/neo-go/pkg/neotest/chain"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	nns "github.com/epicchainlabs/epicchain-go/examples/nft-nd-nns"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest"
+	"github.com/epicchainlabs/epicchain-go/pkg/neotest/chain"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/require"
 )
 
@@ -376,7 +376,7 @@ func TestTransfer(t *testing.T) {
 	// with onNEP11Transfer
 	ctr = neotest.CompileSource(t, e.CommitteeHash,
 		strings.NewReader(`package foo
-			import "github.com/nspcc-dev/neo-go/pkg/interop"
+			import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 			func OnNEP11Payment(from interop.Hash160, amount int, token []byte, data any) {}`),
 		&compiler.Options{Name: "foo"})
 	e.DeployContract(t, ctr, nil)

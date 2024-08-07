@@ -4,7 +4,7 @@ Package util contains some special useful functions that are provided by compile
 package util
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 )
 
 // Abort terminates current execution, unlike exception throwing with panic() it

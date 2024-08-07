@@ -4,7 +4,7 @@ import (
 	"context"
 	"net"
 
-	"github.com/nspcc-dev/neo-go/pkg/network/payload"
+	"github.com/epicchainlabs/epicchain-go/pkg/network/payload"
 )
 
 type AddressablePeer interface {

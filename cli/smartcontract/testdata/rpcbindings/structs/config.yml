@@ -1,3 +1,3 @@
 name: "Types"
-sourceurl: https://github.com/nspcc-dev/neo-go/
+sourceurl: https://github.com/epicchainlabs/epicchain-go/
 safemethods: ["contract", "block", "transaction", "struct"]

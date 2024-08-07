@@ -3,8 +3,8 @@ package mpt
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/random"
-	"github.com/nspcc-dev/neo-go/pkg/core/storage"
+	"github.com/epicchainlabs/epicchain-go/internal/random"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage"
 	"github.com/stretchr/testify/require"
 )
 

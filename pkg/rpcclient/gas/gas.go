@@ -8,8 +8,8 @@ package for more details on NEP-17 interface.
 package gas
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/core/native/nativehashes"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/nep17"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native/nativehashes"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/nep17"
 )
 
 // Hash stores the hash of the native GAS contract.

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage"
 	"github.com/stretchr/testify/require"
 )
 

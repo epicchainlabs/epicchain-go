@@ -1,6 +1,6 @@
 package interop
 
-import "github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 
 const (
 	// Hash160Len is the length of proper Hash160 in bytes, use it to

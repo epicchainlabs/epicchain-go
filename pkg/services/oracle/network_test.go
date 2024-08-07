@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
 	"github.com/stretchr/testify/require"
 )
 

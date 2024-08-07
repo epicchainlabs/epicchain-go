@@ -3,8 +3,8 @@ package interop
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core/block"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/block"
 	"github.com/stretchr/testify/require"
 )
 

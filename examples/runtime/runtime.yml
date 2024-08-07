@@ -1,5 +1,5 @@
 name: "Runtime example"
-sourceurl: https://github.com/nspcc-dev/neo-go/
+sourceurl: https://github.com/epicchainlabs/epicchain-go/
 supportedstandards: []
 events:
   - name: Event

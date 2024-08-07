@@ -12,10 +12,10 @@ import (
 	"text/template"
 	"unicode"
 
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/callflag"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/callflag"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 const srcTmpl = `
@@ -155,9 +155,9 @@ func NewConfig() Config {
 // lead to unexpected results.
 func Generate(cfg Config) error {
 	ctr := TemplateFromManifest(cfg, scTypeToGo)
-	ctr.Imports = append(ctr.Imports, "github.com/nspcc-dev/neo-go/pkg/interop/contract")
+	ctr.Imports = append(ctr.Imports, "github.com/epicchainlabs/epicchain-go/pkg/interop/contract")
 	if ctr.Hash != "" {
-		ctr.Imports = append(ctr.Imports, "github.com/nspcc-dev/neo-go/pkg/interop/neogointernal")
+		ctr.Imports = append(ctr.Imports, "github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal")
 	}
 	sort.Strings(ctr.Imports)
 
@@ -206,13 +206,13 @@ func scTypeToGo(name string, typ smartcontract.ParamType, cfg *Config) (string, 
 	case smartcontract.StringType:
 		return "string", ""
 	case smartcontract.Hash160Type:
-		return "interop.Hash160", "github.com/nspcc-dev/neo-go/pkg/interop"
+		return "interop.Hash160", "github.com/epicchainlabs/epicchain-go/pkg/interop"
 	case smartcontract.Hash256Type:
-		return "interop.Hash256", "github.com/nspcc-dev/neo-go/pkg/interop"
+		return "interop.Hash256", "github.com/epicchainlabs/epicchain-go/pkg/interop"
 	case smartcontract.PublicKeyType:
-		return "interop.PublicKey", "github.com/nspcc-dev/neo-go/pkg/interop"
+		return "interop.PublicKey", "github.com/epicchainlabs/epicchain-go/pkg/interop"
 	case smartcontract.SignatureType:
-		return "interop.Signature", "github.com/nspcc-dev/neo-go/pkg/interop"
+		return "interop.Signature", "github.com/epicchainlabs/epicchain-go/pkg/interop"
 	case smartcontract.ArrayType:
 		return "[]any", ""
 	case smartcontract.MapType:

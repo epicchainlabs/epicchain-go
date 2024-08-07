@@ -11,12 +11,12 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/nspcc-dev/neo-go/pkg/core/block"
-	"github.com/nspcc-dev/neo-go/pkg/core/state"
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/neorpc"
-	"github.com/nspcc-dev/neo-go/pkg/neorpc/result"
-	"github.com/nspcc-dev/neo-go/pkg/neorpc/rpcevent"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/block"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/state"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc/result"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc/rpcevent"
 )
 
 // WSClient is a websocket-enabled RPC client that can be used with appropriate
@@ -44,7 +44,7 @@ import (
 // still the user responsibility to unsubscribe.
 //
 // All Receive* methods provide notifications ordering and persistence guarantees.
-// See https://github.com/nspcc-dev/neo-go/blob/master/docs/notifications.md#ordering-and-persistence-guarantees
+// See https://github.com/epicchainlabs/epicchain-go/blob/master/docs/notifications.md#ordering-and-persistence-guarantees
 // for more details on this topic.
 //
 // Any received subscription items (blocks/transactions/nofitications) are passed

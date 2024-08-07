@@ -10,9 +10,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/pkg/io"
-	"github.com/nspcc-dev/neo-go/pkg/network/capability"
-	"github.com/nspcc-dev/neo-go/pkg/network/payload"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/network/capability"
+	"github.com/epicchainlabs/epicchain-go/pkg/network/payload"
 )
 
 type handShakeStage uint8

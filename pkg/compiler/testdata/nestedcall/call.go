@@ -1,6 +1,6 @@
 package nestedcall
 
-import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/nestedcall/inner"
+import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/nestedcall/inner"
 
 // X is what we use.
 const X = 42

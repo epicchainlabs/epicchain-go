@@ -5,10 +5,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/nspcc-dev/neo-go/cli/cmdargs"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/binding"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/rpcbinding"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/cli/cmdargs"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/binding"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/rpcbinding"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 	"github.com/urfave/cli"
 	"gopkg.in/yaml.v3"
 )

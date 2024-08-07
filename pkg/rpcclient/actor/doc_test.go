@@ -5,16 +5,16 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/neorpc/result"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/actor"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/neo"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/policy"
-	sccontext "github.com/nspcc-dev/neo-go/pkg/smartcontract/context"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm/vmstate"
-	"github.com/nspcc-dev/neo-go/pkg/wallet"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc/result"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/actor"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/neo"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/policy"
+	sccontext "github.com/epicchainlabs/epicchain-go/pkg/smartcontract/context"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/vmstate"
+	"github.com/epicchainlabs/epicchain-go/pkg/wallet"
 )
 
 func ExampleActor() {

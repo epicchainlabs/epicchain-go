@@ -5,7 +5,7 @@ import (
 	"math/big"
 	"math/bits"
 
-	"github.com/nspcc-dev/neo-go/pkg/util/slice"
+	"github.com/epicchainlabs/epicchain-go/pkg/util/slice"
 )
 
 const (

@@ -3,7 +3,7 @@ package manifest
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
 	"github.com/stretchr/testify/require"
 )
 

@@ -1,6 +1,6 @@
 package ledger
 
-import "github.com/nspcc-dev/neo-go/pkg/interop"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 // TransactionSigner represent the signer of a NEO transaction. It's similar to
 // Signer class in Neo .net framework.

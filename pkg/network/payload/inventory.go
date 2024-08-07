@@ -1,8 +1,8 @@
 package payload
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/io"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // A node can broadcast the object information it owns by this message.

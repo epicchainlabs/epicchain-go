@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/random"
+	"github.com/epicchainlabs/epicchain-go/internal/random"
 	"github.com/stretchr/testify/require"
 )
 

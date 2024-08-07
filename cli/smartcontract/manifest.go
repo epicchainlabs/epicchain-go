@@ -6,13 +6,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/nspcc-dev/neo-go/cli/cmdargs"
-	"github.com/nspcc-dev/neo-go/cli/flags"
-	"github.com/nspcc-dev/neo-go/cli/options"
-	"github.com/nspcc-dev/neo-go/pkg/core/state"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/nef"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/cli/cmdargs"
+	"github.com/epicchainlabs/epicchain-go/cli/flags"
+	"github.com/epicchainlabs/epicchain-go/cli/options"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/state"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/nef"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 	"github.com/urfave/cli"
 )
 

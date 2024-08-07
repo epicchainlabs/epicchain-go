@@ -6,8 +6,8 @@ import (
 	"unicode/utf8"
 
 	json "github.com/nspcc-dev/go-ordered-json"
-	"github.com/nspcc-dev/neo-go/pkg/core/state"
-	"github.com/nspcc-dev/neo-go/pkg/services/oracle/jsonpath"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/state"
+	"github.com/epicchainlabs/epicchain-go/pkg/services/oracle/jsonpath"
 )
 
 func filter(value []byte, path string) ([]byte, error) {

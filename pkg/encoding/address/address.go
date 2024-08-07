@@ -3,8 +3,8 @@ package address
 import (
 	"errors"
 
-	"github.com/nspcc-dev/neo-go/pkg/encoding/base58"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/base58"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 const (

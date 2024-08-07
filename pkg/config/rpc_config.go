@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/encoding/fixedn"
+	"github.com/epicchainlabs/epicchain-go/pkg/encoding/fixedn"
 )
 
 type (

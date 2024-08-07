@@ -1,6 +1,6 @@
 package invalid6
 
-import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 
 type SomeStruct struct {
 	Field int

@@ -5,14 +5,14 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/transaction"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/actor"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/gas"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/notary"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/policy"
-	"github.com/nspcc-dev/neo-go/pkg/vm/vmstate"
-	"github.com/nspcc-dev/neo-go/pkg/wallet"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/transaction"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/actor"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/gas"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/notary"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/policy"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/vmstate"
+	"github.com/epicchainlabs/epicchain-go/pkg/wallet"
 )
 
 func ExampleActor() {

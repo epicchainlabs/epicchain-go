@@ -3,7 +3,7 @@ package network
 import (
 	"math/big"
 
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // NotaryFeer implements mempool.Feer interface for Notary balance handling.

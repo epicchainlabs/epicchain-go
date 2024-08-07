@@ -7,8 +7,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/storage/dbconfig"
-	"github.com/nspcc-dev/neo-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage/dbconfig"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
 	"go.etcd.io/bbolt"
 )
 

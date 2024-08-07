@@ -1,11 +1,11 @@
 package nep17
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/management"
-	"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-	"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/management"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 )
 
 // Token holds all token info

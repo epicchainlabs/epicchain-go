@@ -1,6 +1,6 @@
 package mpt
 
-import "github.com/nspcc-dev/neo-go/pkg/util"
+import "github.com/epicchainlabs/epicchain-go/pkg/util"
 
 // lcp returns the longest common prefix of a and b.
 // Note: it does no allocations.

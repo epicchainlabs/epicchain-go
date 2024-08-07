@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"syscall"
 
-	"github.com/nspcc-dev/neo-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
 )
 
 // reservedCIDRs is a list of ip addresses for private networks.

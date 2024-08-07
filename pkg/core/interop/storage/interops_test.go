@@ -5,8 +5,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/interop"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/storage"
 	"github.com/stretchr/testify/require"
 )
 

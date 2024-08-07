@@ -123,7 +123,7 @@ You can invoke smart contracts with arguments. Take the following ***roll the di
 ```
 package rollthedice
 
-import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 
 func RollDice(number int) {
     if number == 0 {

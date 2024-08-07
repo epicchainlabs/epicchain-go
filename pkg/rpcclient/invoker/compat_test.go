@@ -3,8 +3,8 @@ package invoker_test
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient"
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/invoker"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/invoker"
 )
 
 func TestRPCInvokerRPCClientCompat(t *testing.T) {

@@ -1,13 +1,13 @@
 package oraclecontract
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/oracle"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/std"
-	"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-	"github.com/nspcc-dev/neo-go/pkg/interop/storage"
-	"github.com/nspcc-dev/neo-go/pkg/interop/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/oracle"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/std"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 )
 
 // RequestURL accepts a complete set of parameters to make an oracle request and

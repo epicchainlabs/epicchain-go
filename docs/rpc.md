@@ -3,7 +3,7 @@
 ## Client
 
 Client is provided as a Go package, so please refer to the
-[relevant godocs page](https://godoc.org/github.com/nspcc-dev/neo-go/pkg/rpcclient).
+[relevant godocs page](https://godoc.org/github.com/epicchainlabs/epicchain-go/pkg/rpcclient).
 
 ## Server
 
@@ -253,7 +253,7 @@ handler) with a block which is next to the block with the specified height.
 Any historical RPC call needs the historical chain state to be presented in the
 node storage, thus if the node keeps only latest MPT state the historical call
 can not be handled properly and
-[neorpc.ErrUnsupportedState](https://github.com/nspcc-dev/neo-go/blob/87e4b6beaafa3c180184cbbe88ba143378c5024c/pkg/neorpc/errors.go#L134)
+[neorpc.ErrUnsupportedState](https://github.com/epicchainlabs/epicchain-go/blob/87e4b6beaafa3c180184cbbe88ba143378c5024c/pkg/neorpc/errors.go#L134)
 is returned in this case. The historical calls only guaranteed to correctly work
 on archival node that stores all MPT data. If a node keeps the number of latest
 states and has the GC on (this setting corresponds to the

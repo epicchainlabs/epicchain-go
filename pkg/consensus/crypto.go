@@ -5,7 +5,7 @@ import (
 	"errors"
 
 	"github.com/nspcc-dev/dbft"
-	"github.com/nspcc-dev/neo-go/pkg/crypto/keys"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
 )
 
 // privateKey is a wrapper around keys.PrivateKey

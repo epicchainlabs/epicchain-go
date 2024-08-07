@@ -6,15 +6,15 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
 	"github.com/stretchr/testify/require"
 )
 
 func TestReturnValueReceiver(t *testing.T) {
 	t.Run("regular", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/method"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/method"
 
 		func Main() int {
 			return method.NewX().GetA()
@@ -23,7 +23,7 @@ func TestReturnValueReceiver(t *testing.T) {
 	})
 	t.Run("inline", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 
 		func Main() int {
 			return inline.NewT().GetN()
@@ -89,7 +89,7 @@ func TestNotAssignedFunctionCall(t *testing.T) {
 	})
 	t.Run("Builtin", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/lib/address"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/lib/address"
 		func Main() int {
 			address.ToHash160("NPAsqZkx9WhNd4P72uhZxBhLinSuNkxfB8")
 			address.ToHash160("NPAsqZkx9WhNd4P72uhZxBhLinSuNkxfB8")
@@ -364,7 +364,7 @@ func TestFunctionUnusedParameters(t *testing.T) {
 func TestUnusedFunctions(t *testing.T) {
 	t.Run("only variable", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/nestedcall"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/nestedcall"
 		func Main() int {
 			return nestedcall.X
 		}`
@@ -377,7 +377,7 @@ func TestUnusedFunctions(t *testing.T) {
 	t.Run("imported function", func(t *testing.T) {
 		// Check that import map is set correctly during package traversal.
 		src := `package foo
-		import inner "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/nestedcall"
+		import inner "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/nestedcall"
 		func Main() int {
 			return inner.N()
 		}`
@@ -389,7 +389,7 @@ func TestUnusedFunctions(t *testing.T) {
 	t.Run("method inside of an imported package", func(t *testing.T) {
 		// Check that import map is set correctly during package traversal.
 		src := `package foo
-		import inner "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/nestedcall"
+		import inner "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/nestedcall"
 		func Main() int {
 			var t inner.Token
 			return t.Method()

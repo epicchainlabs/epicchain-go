@@ -1,9 +1,9 @@
 package runtimecontract
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop/lib/address"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/management"
-	"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/lib/address"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/management"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 )
 
 var (

@@ -3,8 +3,8 @@ package main
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/config"
-	"github.com/nspcc-dev/neo-go/pkg/core/native"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native"
 	"github.com/stretchr/testify/require"
 )
 

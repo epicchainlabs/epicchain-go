@@ -34,12 +34,12 @@ No additional packages are needed for NeoGo CN.
 ### Installation
 
 Download NeoGo binary [from
-Github](https://github.com/nspcc-dev/neo-go/releases) or use [Docker
+Github](https://github.com/epicchainlabs/epicchain-go/releases) or use [Docker
 image](https://hub.docker.com/r/nspccdev/neo-go). It has everything included,
 no additional plugins needed.
 
 Take an appropriate (mainnet/testnet) configuration [from the
-repository](https://github.com/nspcc-dev/neo-go/tree/master/config) and save
+repository](https://github.com/epicchainlabs/epicchain-go/tree/master/config) and save
 it in some directory (we'll assume that it's available in the same directory as
 neo-go binary).
 

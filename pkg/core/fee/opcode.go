@@ -1,7 +1,7 @@
 package fee
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
 )
 
 // Opcode returns the deployment coefficients of the specified opcodes.

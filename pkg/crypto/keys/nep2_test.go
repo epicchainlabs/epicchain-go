@@ -3,7 +3,7 @@ package keys
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/keytestcases"
+	"github.com/epicchainlabs/epicchain-go/internal/keytestcases"
 	"github.com/stretchr/testify/assert"
 )
 

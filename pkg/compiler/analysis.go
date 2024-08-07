@@ -8,8 +8,8 @@ import (
 	"go/types"
 	"strings"
 
-	"github.com/nspcc-dev/neo-go/pkg/vm/emit"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/emit"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
 	"golang.org/x/tools/go/packages"
 )
 
@@ -20,7 +20,7 @@ var (
 	// ErrInvalidExportedRetCount is returned when exported contract method has invalid return values count.
 	ErrInvalidExportedRetCount = errors.New("exported method is not allowed to have more than one return value")
 	// ErrGenericsUnsuppored is returned when generics-related tokens are encountered.
-	ErrGenericsUnsuppored = errors.New("generics are currently unsupported, please, see the https://github.com/nspcc-dev/neo-go/issues/2376")
+	ErrGenericsUnsuppored = errors.New("generics are currently unsupported, please, see the https://github.com/epicchainlabs/epicchain-go/issues/2376")
 )
 
 var (
@@ -729,7 +729,7 @@ func isSyscall(fun *funcScope) bool {
 		strings.HasPrefix(fun.name, "Opcode") || strings.HasPrefix(fun.name, "CallWithToken"))
 }
 
-const interopPrefix = "github.com/nspcc-dev/neo-go/pkg/interop"
+const interopPrefix = "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 func isInteropPath(s string) bool {
 	return strings.HasPrefix(s, interopPrefix)
@@ -755,7 +755,7 @@ func canConvert(s string) bool {
 // isBuiltin denotes whether code generation for dynamic builtin function will be performed
 // manually.
 func canInline(s string, name string, isBuiltin bool) bool {
-	if strings.HasPrefix(s, "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline") {
+	if strings.HasPrefix(s, "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline") {
 		return true
 	}
 	if !isInteropPath(s) {

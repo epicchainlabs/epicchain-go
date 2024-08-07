@@ -3,7 +3,7 @@ package consensus
 import (
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/crypto/keys"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
 	"github.com/stretchr/testify/require"
 )
 

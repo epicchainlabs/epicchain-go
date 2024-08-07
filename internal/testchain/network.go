@@ -1,6 +1,6 @@
 package testchain
 
-import "github.com/nspcc-dev/neo-go/pkg/config/netmode"
+import "github.com/epicchainlabs/epicchain-go/pkg/config/netmode"
 
 // Network returns testchain network's magic number.
 func Network() netmode.Magic {

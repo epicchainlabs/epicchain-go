@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 )
 
 // Parameter represents smartcontract's parameter's definition.

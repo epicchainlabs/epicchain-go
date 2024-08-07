@@ -1,8 +1,8 @@
 package standard
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/manifest"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/manifest"
 )
 
 // DecimalTokenBase contains methods common to NEP-11 and NEP-17 token standards.

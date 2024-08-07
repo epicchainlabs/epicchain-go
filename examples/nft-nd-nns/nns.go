@@ -9,15 +9,15 @@ must be added by the committee before new domain name can be registered.
 package nns
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/interop/iterator"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/crypto"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/management"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/neo"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/std"
-	"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-	"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/iterator"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/crypto"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/management"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/neo"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/std"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 )
 
 // Prefixes used for contract data storage.

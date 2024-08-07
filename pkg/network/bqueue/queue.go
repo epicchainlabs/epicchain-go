@@ -4,7 +4,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/block"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/block"
 	"go.uber.org/zap"
 )
 

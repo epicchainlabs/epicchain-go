@@ -8,17 +8,17 @@ package core
 */
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/core/fee"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/crypto"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/interopnames"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/iterator"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/runtime"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/storage"
-	"github.com/nspcc-dev/neo-go/pkg/core/native"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/callflag"
-	"github.com/nspcc-dev/neo-go/pkg/vm"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/fee"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/crypto"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/interopnames"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/iterator"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/runtime"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/native"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/callflag"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm"
 )
 
 // SpawnVM returns a VM with script getter and interop functions set

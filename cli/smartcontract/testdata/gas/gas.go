@@ -4,8 +4,8 @@
 package gastoken
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/rpcclient/nep17"
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/rpcclient/nep17"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // Hash contains contract hash.

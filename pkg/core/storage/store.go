@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/nspcc-dev/neo-go/pkg/core/storage/dbconfig"
-	"github.com/nspcc-dev/neo-go/pkg/core/storage/dboper"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage/dbconfig"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/storage/dboper"
 	"github.com/syndtr/goleveldb/leveldb/util"
 )
 

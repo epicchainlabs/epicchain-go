@@ -1,14 +1,14 @@
 package testdata
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/interop/lib/address"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/ledger"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/management"
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/neo"
-	"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-	"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/lib/address"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/management"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/neo"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 )
 
 const (

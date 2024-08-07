@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/neorpc"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc"
 	"github.com/stretchr/testify/require"
 )
 

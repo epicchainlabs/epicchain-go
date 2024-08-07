@@ -1,147 +1,117 @@
+# EpicChain Go Node and SDK
 
 <p align="center">
-  <b>Go</b> Node and SDK for the <a href="https://epicchain.org">epicchain</a> blockchain.
+  <b>EpicChain</b> Node and SDK for the <a href="https://epicchain.org">EpicChain</a> blockchain.
 </p>
 
 <hr />
 
-[![codecov](https://codecov.io/gh/nspcc-dev/epicchain-go/branch/master/graph/badge.svg)](https://codecov.io/gh/nspcc-dev/epicchain-go)
-[![GithubWorkflows Tests](https://github.com/nspcc-dev/epicchain-go/actions/workflows/tests.yml/badge.svg)](https://github.com/nspcc-dev/epicchain-go/actions/workflows/tests.yml)
-[![Report](https://goreportcard.com/badge/github.com/nspcc-dev/epicchain-go)](https://goreportcard.com/report/github.com/nspcc-dev/epicchain-go)
-[![GoDoc](https://godoc.org/github.com/nspcc-dev/epicchain-go?status.svg)](https://godoc.org/github.com/nspcc-dev/epicchain-go)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/nspcc-dev/epicchain-go?sort=semver)
-![License](https://img.shields.io/github/license/nspcc-dev/epicchain-go.svg?style=popout)
+[![codecov](https://codecov.io/gh/epicchainlabs/epicchain-go/branch/master/graph/badge.svg)](https://codecov.io/gh/epicchainlabs/epicchain-go)
+[![GithubWorkflows Tests](https://github.com/epicchainlabs/epicchain-go/actions/workflows/tests.yml/badge.svg)](https://github.com/epicchainlabs/epicchain-go/actions/workflows/tests.yml)
+[![Report](https://goreportcard.com/badge/github.com/epicchainlabs/epicchain-go)](https://goreportcard.com/report/github.com/epicchainlabs/epicchain-go)
+[![GoDoc](https://godoc.org/github.com/epicchainlabs/epicchain-go?status.svg)](https://godoc.org/github.com/epicchainlabs/epicchain-go)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/epicchainlabs/epicchain-go?sort=semver)
+![License](https://img.shields.io/github/license/epicchainlabs/epicchain-go.svg?style=popout)
 
-# Overview
+## Overview
 
-epicchainGo is a complete platform for distributed application development built on
-top of and compatible with the [epicchain project](https://github.com/epicchain-project).
-This includes, but is not limited to (see documentation for more details):
+Welcome to **EpicChainGo**, the comprehensive platform for developing distributed applications on the EpicChain blockchain. EpicChainGo provides an extensive suite of tools and components essential for blockchain development, including but not limited to:
 
-- [Consensus node](docs/consensus.md)
-- [RPC node & client](docs/rpc.md)
-- [CLI tool](docs/cli.md)
-- [Smart contract compiler](docs/compiler.md)
-- [epicchain virtual machine](docs/vm.md)
-- [Smart contract examples](examples/README.md)
-- [Oracle service](docs/oracle.md)
-- [State validation service](docs/stateroots.md)
+- **Consensus Node**: Handle the consensus mechanism of the EpicChain network. For detailed information, check out the [consensus documentation](docs/consensus.md).
+- **RPC Node & Client**: Facilitate remote procedure calls to interact with the EpicChain blockchain. For more details, refer to [RPC documentation](docs/rpc.md).
+- **CLI Tool**: Command-line interface tool for various blockchain operations. Instructions can be found in the [CLI documentation](docs/cli.md).
+- **Smart Contract Compiler**: Compile smart contracts written in Go into EpicChain VM bytecode. For guidance, see [compiler documentation](docs/compiler.md).
+- **EpicChain Virtual Machine**: The virtual machine that executes smart contracts. More information is available in the [VM documentation](docs/vm.md).
+- **Smart Contract Examples**: Explore various smart contract examples to help you get started. See the [examples directory](examples/README.md) for more.
+- **Oracle Service**: Service for providing external data to the blockchain. Learn more in the [oracle documentation](docs/oracle.md).
+- **State Validation Service**: Ensure the validity of the blockchain state. Detailed information can be found in the [state validation documentation](docs/stateroots.md).
 
-The protocol implemented here is epicchain N3-compatible. However, you can also find
-an implementation of the epicchain Legacy protocol in the [**master-2.x**
-branch](https://github.com/nspcc-dev/epicchain-go/tree/master-2.x) and releases
-before 0.80.0 (**0.7X.Y** track).
+EpicChainGo is designed to be compatible with the EpicChain N3 protocol. However, if you need to work with the EpicChain Legacy protocol, you can find an implementation in the [**master-2.x** branch](https://github.com/epicchainlabs/epicchain-go/tree/master-2.x) and releases prior to version 0.80.0 (version **0.7X.Y** track).
 
-# Getting started
+## Getting Started
 
-## Installation
+### Installation
 
-epicchainGo is distributed as a single binary that includes all the functionality
-provided (but smart contract compiler requires Go compiler to operate). You
-can grab it from the [releases page](https://github.com/nspcc-dev/epicchain-go/releases), use a Docker image (see
-[Docker Hub](https://hub.docker.com/r/nspccdev/epicchain-go) for various releases of
-epicchainGo, `:latest` points to the latest release) or build it yourself.
+EpicChainGo is distributed as a single binary, encompassing all the features and functionality you need (please note that the smart contract compiler requires the Go compiler). You have several options for installation:
 
-### Building
+1. **Download the Binary**: Obtain the pre-built binary from the [releases page](https://github.com/epicchainlabs/epicchain-go/releases).
+2. **Docker Image**: Use the Docker image available on [Docker Hub](https://hub.docker.com/r/nspccdev/epicchain-go). The `:latest` tag points to the most recent release.
+3. **Build from Source**: Compile the binary yourself by following the instructions below.
 
-Building epicchainGo requires Go 1.20+ and `make`:
+#### Building from Source
+
+To build EpicChainGo from source, you need Go 1.20+ and `make` installed:
 
 ```sh
 make
 ```
 
-The resulting binary is `bin/epicchain-go`. Note that using some random revision
-from the `master` branch is not recommended (it can have any number of
-incompatibilities and bugs depending on the development stage); please use
-tagged released versions.
+The build process will generate the binary located at `bin/epicchain-go`. We recommend using tagged releases rather than random revisions from the `master` branch, as these may contain bugs or incompatibilities depending on the development stage.
 
-#### Building on Windows
+##### Building on Windows
 
-To build epicchainGo on the Windows platform, we recommend you to install `make` from the [MinGW
-package](https://osdn.net/projects/mingw/). Then, you can build epicchainGo with:
+For building EpicChainGo on Windows, install `make` from the [MinGW package](https://osdn.net/projects/mingw/). Then, you can build EpicChainGo with:
 
 ```sh
 make
 ```
 
-The resulting binary is `bin/epicchain-go.exe`.
+The resulting binary will be `bin/epicchain-go.exe`.
 
-## Running a node
+### Running a Node
 
-A node needs to connect to some network, either a local one (usually referred to
-as `privnet`) or public (like `mainnet` or `testnet`). Network configuration
-is stored in a file, and epicchainGo allows you to store multiple files in one
-directory (`./config` by default) and easily switch between them using network
-flags.
+To run an EpicChain node, it must be connected to a network, either a local network (commonly referred to as `privnet`) or a public network (such as `mainnet` or `testnet`). Network configurations are managed via files, and EpicChainGo supports storing multiple configuration files in one directory (`./config` by default) and switching between them using network flags.
 
-To start an epicchain node on a private network, use:
+To start a node on a private network, use:
 
 ```sh
 ./bin/epicchain-go node
 ```
 
-Or specify a different network with an appropriate flag like this:
+To specify a different network, use an appropriate flag:
 
 ```sh
 ./bin/epicchain-go node --mainnet
 ```
 
-Available network flags:
+Available network flags include:
 - `--mainnet, -m`
 - `--privnet, -p`
 - `--testnet, -t`
 
-To run a consensus/committee node, refer to [consensus
-documentation](docs/consensus.md).
+For running a consensus/committee node, please refer to the [consensus documentation](docs/consensus.md).
 
-If you're running a node on Windows, please turn off or configure Windows
-Firewall appropriately (allowing inbound connections to the P2P port).
+If you're using Windows, ensure that Windows Firewall is configured to allow inbound connections to the P2P port.
 
 ### Docker
 
-By default, the `CMD` is set to run a node on `privnet`. So, to do this, simply run:
+By default, the Docker image is configured to run a node on `privnet`. To start a node using Docker, execute:
 
 ```bash
 docker run -d --name epicchain-go -p 20332:20332 -p 20331:20331 nspccdev/epicchain-go
 ```
 
-This will start a node on `privnet` and expose the node's ports `20332` (P2P
-protocol) and `20331` (JSON-RPC server).
+This command starts a node on `privnet` and exposes ports `20332` (for P2P protocol) and `20331` (for JSON-RPC server).
 
-### Importing mainnet/testnet dump files
+### Importing Chain Dumps
 
-If you want to jump-start your mainnet or testnet node with [chain archives
-provided by NGD](https://sync.ngd.network/), follow these instructions:
-```
-$ wget .../chain.acc.zip # chain dump file
+To initialize your mainnet or testnet node with [chain archives provided by NGD](https://sync.ngd.network/), follow these steps:
+
+```sh
+$ wget .../chain.acc.zip # download the chain dump file
 $ unzip chain.acc.zip
-$ ./bin/epicchain-go db restore -m -i chain.acc # for testnet use '-t' flag instead of '-m'
+$ ./bin/epicchain-go db restore -m -i chain.acc # use '-t' flag instead of '-m' for testnet
 ```
 
-The process differs from the C# node in that block importing is a separate
-mode. After it ends, the node can be started normally.
+The import process differs from that of the C# node in that block importing is a separate mode. After importing, you can start the node normally.
 
-## Running a private network
+## Running a Private Network
 
-Refer to [consensus node documentation](docs/consensus.md).
+For detailed instructions on running a private network, refer to the [consensus node documentation](docs/consensus.md).
 
-## Smart contract development
+## Smart Contract Development
 
-Please refer to the [epicchainGo smart contract development
-workshop](https://github.com/nspcc-dev/epicchain-go-sc-wrkshp), which shows some
-simple contracts that can be compiled/deployed/run using the epicchainGo compiler, SDK,
-and a private network. For details on how Go code is translated to epicchain VM
-bytecode and what you can and cannot do in a smart contract, please refer to the
-[compiler documentation](docs/compiler.md).
+For guidance on developing smart contracts with EpicChainGo, visit the [EpicChainGo smart contract development workshop](https://github.com/epicchainlabs/epicchain-go-sc-wrkshp). This workshop provides examples of simple contracts that can be compiled, deployed, and run using the EpicChainGo compiler, SDK, and a private network. For specifics on translating Go code to EpicChain VM bytecode and contract limitations, consult the [compiler documentation](docs/compiler.md).
 
-Refer to [examples](examples/README.md) for more epicchain smart contract examples
-written in Go.
+Explore more EpicChain smart contract examples written in Go in the [examples directory](examples/README.md).
 
-## Wallets
-
-epicchainGo wallet is just an
-[NEP-6](https://github.com/epicchain-project/proposals/blob/68398d28b6932b8dd2b377d5d51bca7b0442f532/nep-6.mediawiki)
-file that is used by CLI commands to sign various things. CLI commands are not
-a direct part of the node, but rather a part of the epicchainGo binary; their
-implementations use RPC to query data from the blockchain and perform any
-required actions.

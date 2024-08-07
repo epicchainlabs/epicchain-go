@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/internal/testserdes"
+	"github.com/epicchainlabs/epicchain-go/internal/testserdes"
 )
 
 func TestCandidate_Bytes(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/nspcc-dev/neo-go/pkg/neorpc"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc"
 )
 
 const (

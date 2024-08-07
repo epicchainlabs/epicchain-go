@@ -4,8 +4,8 @@ Package crypto provides an interface to cryptographic syscalls.
 package crypto
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 )
 
 // CheckMultisig checks that the script container (transaction) is signed by multiple

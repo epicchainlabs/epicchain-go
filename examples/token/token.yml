@@ -1,5 +1,5 @@
 name: "Awesome NEO Token"
-sourceurl: https://github.com/nspcc-dev/neo-go/
+sourceurl: https://github.com/epicchainlabs/epicchain-go/
 supportedstandards: ["NEP-17"]
 safemethods: ["balanceOf", "decimals", "symbol", "totalSupply"]
 events:

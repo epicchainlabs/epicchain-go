@@ -3,7 +3,7 @@ package state
 import (
 	"math/big"
 
-	"github.com/nspcc-dev/neo-go/pkg/crypto/keys"
+	"github.com/epicchainlabs/epicchain-go/pkg/crypto/keys"
 )
 
 // Validator holds the state of a validator (its key and votes balance).

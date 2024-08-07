@@ -32,12 +32,12 @@ a dialect of Go rather than a complete port of the language:
    is supported; type assertion panics if value can't be asserted to the desired type, therefore
    it's up to the programmer whether assert can be performed successfully.
  * type aliases including the built-in `any` alias are supported.
- * generics are not supported, but eventually will be (at least, partially), ref. https://github.com/nspcc-dev/neo-go/issues/2376.
+ * generics are not supported, but eventually will be (at least, partially), ref. https://github.com/epicchainlabs/epicchain-go/issues/2376.
 
 ## VM API (interop layer)
 Compiler translates interop function calls into Neo VM syscalls or (for custom
 functions) into Neo VM instructions. [Refer to
-pkg.go.dev](https://pkg.go.dev/github.com/nspcc-dev/neo-go/pkg/interop)
+pkg.go.dev](https://pkg.go.dev/github.com/epicchainlabs/epicchain-go/pkg/interop)
 for full API documentation. In general it provides the same level of
 functionality as Neo .net Framework library.
 
@@ -62,7 +62,7 @@ export GOROOT=/usr/lib64/go/1.15
 ```
 
 The best way to create a new contract is to use `contract init` command. This will
-create an example source file, a config file and `go.mod` with `github.com/nspcc-dev/neo-go/pkg/interop` dependency.
+create an example source file, a config file and `go.mod` with `github.com/epicchainlabs/epicchain-go/pkg/interop` dependency.
 ```
 $ ./bin/neo-go contract init --name MyAwesomeContract
 $ cd MyAwesomeContract
@@ -284,7 +284,7 @@ Any non-byte slice `[]T`| `Array`
 `interop.Signature` | `Signature`
 anything else | `Any` 
 
-`interop.*` types are defined as aliases in `github.com/nspcc-dev/neo-go/pkg/interop` module
+`interop.*` types are defined as aliases in `github.com/epicchainlabs/epicchain-go/pkg/interop` module
 with the sole purpose of correct manifest generation.
 
 As an example, consider `Transfer` event from `NEP-17` standard:

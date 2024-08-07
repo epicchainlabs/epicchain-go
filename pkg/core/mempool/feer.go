@@ -3,7 +3,7 @@ package mempool
 import (
 	"math/big"
 
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // Feer is an interface that abstracts the implementation of the fee calculation.

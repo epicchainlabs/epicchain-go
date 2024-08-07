@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/internal/testserdes"
-	"github.com/nspcc-dev/neo-go/pkg/network/capability"
+	"github.com/epicchainlabs/epicchain-go/internal/testserdes"
+	"github.com/epicchainlabs/epicchain-go/pkg/network/capability"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

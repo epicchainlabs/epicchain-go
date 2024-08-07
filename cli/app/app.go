@@ -5,13 +5,13 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/nspcc-dev/neo-go/cli/query"
-	"github.com/nspcc-dev/neo-go/cli/server"
-	"github.com/nspcc-dev/neo-go/cli/smartcontract"
-	"github.com/nspcc-dev/neo-go/cli/util"
-	"github.com/nspcc-dev/neo-go/cli/vm"
-	"github.com/nspcc-dev/neo-go/cli/wallet"
-	"github.com/nspcc-dev/neo-go/pkg/config"
+	"github.com/epicchainlabs/epicchain-go/cli/query"
+	"github.com/epicchainlabs/epicchain-go/cli/server"
+	"github.com/epicchainlabs/epicchain-go/cli/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/cli/util"
+	"github.com/epicchainlabs/epicchain-go/cli/vm"
+	"github.com/epicchainlabs/epicchain-go/cli/wallet"
+	"github.com/epicchainlabs/epicchain-go/pkg/config"
 	"github.com/urfave/cli"
 )
 

@@ -6,7 +6,7 @@
 //
 // Please, check out the example of zkpbinding package usage to generate and
 // verify proofs on the Neo chain:
-// https://github.com/nspcc-dev/neo-go/blob/91c928e8d35164055e5b2e8efbc898440cc2b486/examples/zkp/cubic_circuit/README.md
+// https://github.com/epicchainlabs/epicchain-go/blob/91c928e8d35164055e5b2e8efbc898440cc2b486/examples/zkp/cubic_circuit/README.md
 package zkpbinding
 
 import (
@@ -21,8 +21,8 @@ import (
 	"github.com/consensys/gnark/backend/groth16"
 	curve "github.com/consensys/gnark/backend/groth16/bls12-381"
 	"github.com/consensys/gnark/backend/witness"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/binding"
-	"github.com/nspcc-dev/neo-go/pkg/util/slice"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/binding"
+	"github.com/epicchainlabs/epicchain-go/pkg/util/slice"
 )
 
 // Config represents a configuration for Verifier Go smart contract generator.
@@ -71,16 +71,16 @@ const (
 // to verify other circuits.
 //
 // Use NeoGo smart contract compiler to compile this contract:
-// https://github.com/nspcc-dev/neo-go/blob/master/docs/compiler.md#compiling.
+// https://github.com/epicchainlabs/epicchain-go/blob/master/docs/compiler.md#compiling.
 // You will need to create contract YAML configuration file and proper go.mod and
 // go.sum files required for compilation. Please, refer to the NeoGo ZKP example
 // to see how to verify proofs via the Verifier contract:
-// https://github.com/nspcc-dev/neo-go/tree/master/examples/zkp/cubic_circuit.
+// https://github.com/epicchainlabs/epicchain-go/tree/master/examples/zkp/cubic_circuit.
 package main
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop/native/crypto"
-	"github.com/nspcc-dev/neo-go/pkg/interop/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/native/crypto"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 )
 
 // A set of circuit-specific variables required for verification. Should be generated
@@ -158,7 +158,7 @@ func VerifyProof(a []byte, b []byte, c []byte, publicInput [][]byte) bool {
 	// verifyCfg is a contract configuration file required to compile smart
 	// contract.
 	verifyCfg = `name: "Groth-16 Verifier contract"
-sourceurl: https://github.com/nspcc-dev/neo-go/
+sourceurl: https://github.com/epicchainlabs/epicchain-go/
 supportedstandards: []`
 
 	// verifyGomod is a standard go.mod file containing module name, go version
@@ -167,12 +167,12 @@ supportedstandards: []`
 
 go 1.20
 
-require github.com/nspcc-dev/neo-go/pkg/interop v0.0.0-20231004150345-8849ccde2524
+require github.com/epicchainlabs/epicchain-go/pkg/interop v0.0.0-20231004150345-8849ccde2524
 `
 
 	// verifyGosum is a standard go.sum file needed for contract compilation.
-	verifyGosum = `github.com/nspcc-dev/neo-go/pkg/interop v0.0.0-20231004150345-8849ccde2524 h1:LKp/89ftf+MwMExKgnbwjQp5zQTUZ3lDCc+DZ4VeSRc=
-github.com/nspcc-dev/neo-go/pkg/interop v0.0.0-20231004150345-8849ccde2524/go.mod h1:ZUuXOkdtHZgaC13za/zMgXfQFncZ0jLzfQTe+OsDOtg=
+	verifyGosum = `github.com/epicchainlabs/epicchain-go/pkg/interop v0.0.0-20231004150345-8849ccde2524 h1:LKp/89ftf+MwMExKgnbwjQp5zQTUZ3lDCc+DZ4VeSRc=
+github.com/epicchainlabs/epicchain-go/pkg/interop v0.0.0-20231004150345-8849ccde2524/go.mod h1:ZUuXOkdtHZgaC13za/zMgXfQFncZ0jLzfQTe+OsDOtg=
 `
 )
 

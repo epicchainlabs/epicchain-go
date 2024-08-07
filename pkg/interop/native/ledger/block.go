@@ -1,6 +1,6 @@
 package ledger
 
-import "github.com/nspcc-dev/neo-go/pkg/interop"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 // Block represents a NEO block, it's a data structure where you can get
 // block-related data from. It's similar to the Block class in the Neo .net

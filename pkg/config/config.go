@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/nspcc-dev/neo-go/pkg/config/netmode"
+	"github.com/epicchainlabs/epicchain-go/pkg/config/netmode"
 	"gopkg.in/yaml.v3"
 )
 

@@ -60,7 +60,7 @@ const (
 )
 
 // Codes for calls that use a wallet (-300...-304) can be returned by the C# RPC server only,
-// see the https://github.com/nspcc-dev/neo-go/blob/master/docs/rpc.md#unsupported-methods.
+// see the https://github.com/epicchainlabs/epicchain-go/blob/master/docs/rpc.md#unsupported-methods.
 const (
 	// ErrInsufficientFundsWalletCode is returned if transaction that sends some assets can't be created
 	// because it fails. Can be returned only by the C# RPC server.

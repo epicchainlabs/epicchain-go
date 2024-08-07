@@ -5,7 +5,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/nspcc-dev/neo-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
 )
 
 // Pool stores unknown MPT nodes along with the corresponding paths (single node is

@@ -6,7 +6,7 @@ overrides:
     call.args: '[]any'
     call.f: any
     call.method: string
-    call.scriptHash: github.com/nspcc-dev/neo-go/pkg/interop.Hash160
+    call.scriptHash: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash160
     callWithToken: any
     callWithToken.args: '[]any'
     callWithToken.flags: int
@@ -20,40 +20,40 @@ overrides:
     checkWitness.hashOrKey: '[]byte'
     createMultisigAccount: '[]byte'
     createMultisigAccount.m: int
-    createMultisigAccount.pubs: '[]github.com/nspcc-dev/neo-go/pkg/interop.PublicKey'
+    createMultisigAccount.pubs: '[]github.com/epicchainlabs/epicchain-go/pkg/interop.PublicKey'
     createStandardAccount: '[]byte'
-    createStandardAccount.pub: github.com/nspcc-dev/neo-go/pkg/interop.PublicKey
-    currentHash: github.com/nspcc-dev/neo-go/pkg/interop.Hash256
+    createStandardAccount.pub: github.com/epicchainlabs/epicchain-go/pkg/interop.PublicKey
+    currentHash: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash256
     currentIndex: int
-    currentSigners: '[]github.com/nspcc-dev/neo-go/pkg/interop/native/ledger.TransactionSigner'
+    currentSigners: '[]github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger.TransactionSigner'
     equals: bool
     equals.b: any
     gasLeft: int
     getAddressVersion: int
-    getBlock: '*github.com/nspcc-dev/neo-go/pkg/interop/native/ledger.Block'
+    getBlock: '*github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger.Block'
     getBlock.indexOrHash: any
     getCallFlags: any
-    getCallingScriptHash: github.com/nspcc-dev/neo-go/pkg/interop.Hash160
-    getEntryScriptHash: github.com/nspcc-dev/neo-go/pkg/interop.Hash160
-    getExecutingScriptHash: github.com/nspcc-dev/neo-go/pkg/interop.Hash160
+    getCallingScriptHash: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash160
+    getEntryScriptHash: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash160
+    getExecutingScriptHash: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash160
     getInvocationCounter: int
     getNetwork: int
     getNotifications: '[][]any'
-    getNotifications.h: github.com/nspcc-dev/neo-go/pkg/interop.Hash160
+    getNotifications.h: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash160
     getRandom: int
-    getScriptContainer: '*github.com/nspcc-dev/neo-go/pkg/interop/native/ledger.Transaction'
+    getScriptContainer: '*github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger.Transaction'
     getTime: int
-    getTransaction: '*github.com/nspcc-dev/neo-go/pkg/interop/native/ledger.Transaction'
-    getTransaction.hash: github.com/nspcc-dev/neo-go/pkg/interop.Hash256
-    getTransactionFromBlock: '*github.com/nspcc-dev/neo-go/pkg/interop/native/ledger.Transaction'
+    getTransaction: '*github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger.Transaction'
+    getTransaction.hash: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash256
+    getTransactionFromBlock: '*github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger.Transaction'
     getTransactionFromBlock.indexOrHash: any
     getTransactionFromBlock.txIndex: int
     getTransactionHeight: int
-    getTransactionHeight.hash: github.com/nspcc-dev/neo-go/pkg/interop.Hash256
-    getTransactionSigners: '[]github.com/nspcc-dev/neo-go/pkg/interop/native/ledger.TransactionSigner'
-    getTransactionSigners.hash: github.com/nspcc-dev/neo-go/pkg/interop.Hash256
+    getTransactionHeight.hash: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash256
+    getTransactionSigners: '[]github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger.TransactionSigner'
+    getTransactionSigners.hash: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash256
     getTransactionVMState: int
-    getTransactionVMState.hash: github.com/nspcc-dev/neo-go/pkg/interop.Hash256
+    getTransactionVMState.hash: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash256
     getTrigger: int
     loadScript: any
     loadScript.args: '[]any'
@@ -64,11 +64,11 @@ overrides:
     notify.name: string
     onNEP11Payment.amount: int
     onNEP11Payment.data: any
-    onNEP11Payment.from: github.com/nspcc-dev/neo-go/pkg/interop.Hash160
+    onNEP11Payment.from: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash160
     onNEP11Payment.token: '[]byte'
     onNEP17Payment.amount: int
     onNEP17Payment.data: any
-    onNEP17Payment.from: github.com/nspcc-dev/neo-go/pkg/interop.Hash160
+    onNEP17Payment.from: github.com/epicchainlabs/epicchain-go/pkg/interop.Hash160
     opcode0NoReturn.op: string
     opcode1: any
     opcode1NoReturn.arg: any
@@ -123,7 +123,7 @@ overrides:
     syscall4.arg3: any
     syscall4.arg4: any
     syscall4.name: string
-    toBlockSR: '*github.com/nspcc-dev/neo-go/pkg/interop/native/ledger.BlockSR'
+    toBlockSR: '*github.com/epicchainlabs/epicchain-go/pkg/interop/native/ledger.BlockSR'
     verify: bool
 namedtypes:
     ledger.Block:

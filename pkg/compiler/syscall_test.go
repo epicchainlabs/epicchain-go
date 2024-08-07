@@ -8,18 +8,18 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/core"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop"
-	"github.com/nspcc-dev/neo-go/pkg/core/interop/interopnames"
-	istorage "github.com/nspcc-dev/neo-go/pkg/core/interop/storage"
-	"github.com/nspcc-dev/neo-go/pkg/interop/contract"
-	"github.com/nspcc-dev/neo-go/pkg/interop/storage"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract"
-	"github.com/nspcc-dev/neo-go/pkg/smartcontract/callflag"
-	"github.com/nspcc-dev/neo-go/pkg/util"
-	"github.com/nspcc-dev/neo-go/pkg/vm"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/core"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/core/interop/interopnames"
+	istorage "github.com/epicchainlabs/epicchain-go/pkg/core/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract"
+	"github.com/epicchainlabs/epicchain-go/pkg/smartcontract/callflag"
+	"github.com/epicchainlabs/epicchain-go/pkg/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -109,12 +109,12 @@ func TestSyscallExecution(t *testing.T) {
 
 	srcBuilder := bytes.NewBuffer(nil)
 	srcBuilder.WriteString(`package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/contract"
-		import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-		import "github.com/nspcc-dev/neo-go/pkg/interop/storage"
-		import "github.com/nspcc-dev/neo-go/pkg/interop/iterator"
-		import "github.com/nspcc-dev/neo-go/pkg/interop/crypto"
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/contract"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/iterator"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/crypto"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 		func unused() { var _ interop.Hash160 }
 	`)
 	for goName, tc := range interops {
@@ -176,7 +176,7 @@ func TestStoragePutGet(t *testing.T) {
 	src := `
 		package foo
 
-		import "github.com/nspcc-dev/neo-go/pkg/interop/storage"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 
 		func Main() string {
 			ctx := storage.GetContext()
@@ -191,7 +191,7 @@ func TestStoragePutGet(t *testing.T) {
 
 func TestNotify(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 	func Main(arg int) {
 		runtime.Notify("Event1", arg, "sum", arg+1)
 		runtime.Notify("single")
@@ -211,7 +211,7 @@ func TestNotify(t *testing.T) {
 
 	t.Run("long event name", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 		func Main(arg int) {
 			runtime.Notify("long event12345678901234567890123")
 		}`
@@ -223,7 +223,7 @@ func TestNotify(t *testing.T) {
 
 func TestSyscallInGlobalInit(t *testing.T) {
 	src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 		var a = runtime.CheckWitness([]byte("5T"))
 		func Main() bool {
 			return a
@@ -242,7 +242,7 @@ func TestSyscallInGlobalInit(t *testing.T) {
 func TestOpcode(t *testing.T) {
 	t.Run("1 argument", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 		func abs(a int) int {
 			return neogointernal.Opcode1("ABS", a).(int)
 		}
@@ -253,7 +253,7 @@ func TestOpcode(t *testing.T) {
 	})
 	t.Run("2 arguments", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/neogointernal"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/neogointernal"
 		func add3(a, b, c int) int {
 			return neogointernal.Opcode2("SUB", a,
 				neogointernal.Opcode2("SUB", b, c).(int)).(int)
@@ -265,7 +265,7 @@ func TestOpcode(t *testing.T) {
 	})
 	t.Run("POW", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/math"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/math"
 		func Main() int {
 			return math.Pow(2, math.Pow(3, 2))
 		}`
@@ -273,7 +273,7 @@ func TestOpcode(t *testing.T) {
 	})
 	t.Run("SRQT", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/math"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/math"
 		func Main() int {
 			return math.Sqrt(math.Sqrt(101)) // == sqrt(10) == 3
 		}`
@@ -281,7 +281,7 @@ func TestOpcode(t *testing.T) {
 	})
 	t.Run("SIGN", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/math"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/math"
 		func Main() []int {
 			signs := make([]int, 3)
 			signs[0] = math.Sign(-123)
@@ -297,7 +297,7 @@ func TestOpcode(t *testing.T) {
 	})
 	t.Run("ABS", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/math"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/math"
 		func Main() int {
 			return math.Abs(-3)
 		}`
@@ -305,7 +305,7 @@ func TestOpcode(t *testing.T) {
 	})
 	t.Run("MAX", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/math"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/math"
 		func Main() int {
 			return math.Max(1, 2) + math.Max(8, 3)
 		}`
@@ -313,7 +313,7 @@ func TestOpcode(t *testing.T) {
 	})
 	t.Run("MIN", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/math"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/math"
 		func Main() int {
 			return math.Min(1, 2) + math.Min(8, 3)
 		}`
@@ -321,7 +321,7 @@ func TestOpcode(t *testing.T) {
 	})
 	t.Run("WITHIN", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/math"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/math"
 		func Main() []bool {
 			r := make([]bool, 5)
 			r[0] = math.Within(2, 3, 5)
@@ -341,7 +341,7 @@ func TestOpcode(t *testing.T) {
 	})
 	t.Run("MODMUL", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/math"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/math"
 		func Main() []int {
 			r := make([]int, 5)
 			r[0] = math.ModMul(3, 4, 5)
@@ -361,7 +361,7 @@ func TestOpcode(t *testing.T) {
 	})
 	t.Run("MODPOW", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/math"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/math"
 		func Main() []int {
 			r := make([]int, 5)
 			r[0] = math.ModPow(3, 4, 5)
@@ -396,7 +396,7 @@ func TestInteropTypesComparison(t *testing.T) {
 			}
 			check := func(t *testing.T, a, b string, expected bool) {
 				src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 		func Main() bool {
 			a := interop.` + typeName + `{` + a + `}
 			b := interop.` + typeName + `{` + b + `}
@@ -410,7 +410,7 @@ func TestInteropTypesComparison(t *testing.T) {
 			})
 			t.Run("a is nil", func(t *testing.T) {
 				src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 		func Main() bool {
 			var a interop.` + typeName + `
@@ -421,7 +421,7 @@ func TestInteropTypesComparison(t *testing.T) {
 			})
 			t.Run("b is nil", func(t *testing.T) {
 				src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 		func Main() bool {
 			a := interop.` + typeName + `{` + ha + `}
@@ -432,7 +432,7 @@ func TestInteropTypesComparison(t *testing.T) {
 			})
 			t.Run("both nil", func(t *testing.T) {
 				src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 		func Main() bool {
 			var a interop.` + typeName + `
@@ -443,7 +443,7 @@ func TestInteropTypesComparison(t *testing.T) {
 			})
 			t.Run("different types", func(t *testing.T) {
 				src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 		func Main() bool {
 			a := interop.` + typeName + `{` + ha + `}
@@ -454,7 +454,7 @@ func TestInteropTypesComparison(t *testing.T) {
 			})
 			t.Run("b is Buffer", func(t *testing.T) {
 				src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 		func Main() bool {
 			a := interop.` + typeName + `{` + ha + `}
@@ -465,7 +465,7 @@ func TestInteropTypesComparison(t *testing.T) {
 			})
 			t.Run("b is ByteString", func(t *testing.T) {
 				src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 		func Main() bool {
 			a := interop.` + typeName + `{` + ha + `}
@@ -476,7 +476,7 @@ func TestInteropTypesComparison(t *testing.T) {
 			})
 			t.Run("b is compound type", func(t *testing.T) {
 				src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 		func Main() bool {
 			a := interop.` + typeName + `{` + ha + `}

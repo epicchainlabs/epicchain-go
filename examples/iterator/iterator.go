@@ -1,9 +1,9 @@
 package iteratorcontract
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop/iterator"
-	"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-	"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/iterator"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 )
 
 // _deploy primes contract's storage with some data to be used later.

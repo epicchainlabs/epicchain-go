@@ -1,8 +1,8 @@
 package inline
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline/a"
-	"github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline/b"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline/a"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline/b"
 )
 
 func NoArgsNoReturn() {}

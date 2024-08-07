@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/vm"
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 	"github.com/stretchr/testify/require"
 )
 
@@ -441,7 +441,7 @@ func TestSubsliceFromStructField(t *testing.T) {
 func TestRemove(t *testing.T) {
 	t.Run("Valid", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/util"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 		func Main() int {
 			a := []int{11, 22, 33}
 			util.Remove(a, 1)
@@ -455,7 +455,7 @@ func TestRemove(t *testing.T) {
 		// Skip the test for now.
 		t.Skip()
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/util"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 		func Main() int {
 			a := []byte{11, 22, 33}
 			util.Remove(a, 1)

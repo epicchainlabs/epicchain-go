@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
 	"github.com/stretchr/testify/require"
 )
 

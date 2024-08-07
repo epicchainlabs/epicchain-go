@@ -1,7 +1,7 @@
 package enginecontract
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 )
 
 // NotifyScriptContainer sends runtime notification with script container hash

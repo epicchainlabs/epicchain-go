@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/pkg/compiler"
-	"github.com/nspcc-dev/neo-go/pkg/vm/opcode"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/opcode"
 	"github.com/stretchr/testify/require"
 )
 
@@ -62,8 +62,8 @@ func checkInstrCount(t *testing.T, src string, expectedSSlotCount, expectedCall,
 
 func TestInline(t *testing.T) {
 	srcTmpl := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/foo"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/foo"
 	var _ = foo.Dummy
 	type pair struct { a, b int }
 	type triple struct {
@@ -183,7 +183,7 @@ func TestInline(t *testing.T) {
 
 func TestIssue1879(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+	import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 	func Main() int {
 		data := "main is called"
 		runtime.Log("log " + string(data))
@@ -195,8 +195,8 @@ func TestIssue1879(t *testing.T) {
 func TestInlineInLoop(t *testing.T) {
 	t.Run("simple", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/storage"
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 		func Main() int {
 			sum := 0
 			values := []int{10, 11}
@@ -211,9 +211,9 @@ func TestInlineInLoop(t *testing.T) {
 	})
 	t.Run("inlined argument", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-		import "github.com/nspcc-dev/neo-go/pkg/interop/storage"
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 		func Main() int {
 			sum := 0
 			values := []int{10, 11}
@@ -228,8 +228,8 @@ func TestInlineInLoop(t *testing.T) {
 	})
 	t.Run("check clean stack on return", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/interop/storage"
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+		import "github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 		func Main() int {
 			values := []int{10, 11, 12}
 			for _, v := range values {
@@ -246,7 +246,7 @@ func TestInlineInLoop(t *testing.T) {
 
 func TestInlineInSwitch(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 	func Main() int {
 		switch inline.VarSum(1, 2) {
 		case inline.VarSum(3, 1):
@@ -263,7 +263,7 @@ func TestInlineInSwitch(t *testing.T) {
 func TestInlineGlobalVariable(t *testing.T) {
 	t.Run("simple", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 		var a = inline.Sum(1, 2)
 		func Main() int {
 			return a
@@ -272,7 +272,7 @@ func TestInlineGlobalVariable(t *testing.T) {
 	})
 	t.Run("complex", func(t *testing.T) {
 		src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 		var a = inline.Sum(3, 4)
 		var b = inline.SumSquared(1, 2) 
 		var c = a + b
@@ -288,7 +288,7 @@ func TestInlineGlobalVariable(t *testing.T) {
 
 func TestInlineVariadicInInlinedCall(t *testing.T) {
 	src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 		func Main() int {
 			return inline.SumSquared(inline.SumVar(3, 4) - 2, 3)
 		}`
@@ -297,7 +297,7 @@ func TestInlineVariadicInInlinedCall(t *testing.T) {
 
 func TestInlineConversion(t *testing.T) {
 	src1 := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 	var _ = inline.A
 	func Main() int {
 		a := 2
@@ -307,7 +307,7 @@ func TestInlineConversion(t *testing.T) {
 	require.NoError(t, err)
 
 	src2 := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 	var _ = inline.A
 	func Main() int {
 		a := 2
@@ -322,7 +322,7 @@ func TestInlineConversion(t *testing.T) {
 
 func TestInlineConversionQualified(t *testing.T) {
 	src1 := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 	var A = 1
 	func Main() int {
 		return inline.Concat(A)
@@ -331,8 +331,8 @@ func TestInlineConversionQualified(t *testing.T) {
 	require.NoError(t, err)
 
 	src2 := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline/b"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline/b"
 	var A = 1
 	func Main() int {
 		return A * 100 + b.A * 10 + inline.A
@@ -344,8 +344,8 @@ func TestInlineConversionQualified(t *testing.T) {
 
 func TestPackageVarsInInlinedCalls(t *testing.T) {
 	src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline/b"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline/b"
 		func Main() int {
 			return inline.Sum(inline.A, b.A)
 		}`
@@ -354,7 +354,7 @@ func TestPackageVarsInInlinedCalls(t *testing.T) {
 
 func TestInlinedMethod(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 	func Main() int {
 		// It's important for this variable to not be named 't'.
 		var z inline.T
@@ -373,7 +373,7 @@ func TestInlinedMethod(t *testing.T) {
 
 func TestInlinedMethodWithPointer(t *testing.T) {
 	src := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 	func Main() int {
 		// It's important for this variable to not be named 't'.
 		var z = &inline.T{}
@@ -392,7 +392,7 @@ func TestInlinedMethodWithPointer(t *testing.T) {
 
 func TestInlineConditionalReturn(t *testing.T) {
 	srcTmpl := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline/c"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline/c"
 	func Main() int {
 		x := %d
 		if c.Is42(x) {
@@ -410,7 +410,7 @@ func TestInlineConditionalReturn(t *testing.T) {
 
 func TestInlineDoubleConditionalReturn(t *testing.T) {
 	srcTmpl := `package foo
-	import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline/c"
+	import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline/c"
 	func Main() int {
 		return c.Transform(%d, %d)
 	}`
@@ -435,7 +435,7 @@ func TestInlineDoubleConditionalReturn(t *testing.T) {
 
 func TestInlineAppendStatement(t *testing.T) {
 	src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 
 		func Main() []byte {
 			val := []byte{4, 5, 6}
@@ -446,7 +446,7 @@ func TestInlineAppendStatement(t *testing.T) {
 
 func TestInlineForeignType(t *testing.T) {
 	src := `package foo
-		import "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/inline"
+		import "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/inline"
 
 		func Main() int {
 			return inline.ForeignTypeInsideInline()

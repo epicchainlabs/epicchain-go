@@ -3,7 +3,7 @@ package capability
 import (
 	"errors"
 
-	"github.com/nspcc-dev/neo-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
 )
 
 // MaxCapabilities is the maximum number of capabilities per payload.

@@ -1,6 +1,6 @@
 package ledger
 
-import "github.com/nspcc-dev/neo-go/pkg/interop"
+import "github.com/epicchainlabs/epicchain-go/pkg/interop"
 
 // Transaction represents a NEO transaction. It's similar to Transaction class
 // in Neo .net framework.

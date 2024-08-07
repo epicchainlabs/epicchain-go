@@ -1,10 +1,10 @@
 package tokencontract
 
 import (
-	"github.com/nspcc-dev/neo-go/examples/token/nep17"
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/lib/address"
-	"github.com/nspcc-dev/neo-go/pkg/interop/storage"
+	"github.com/epicchainlabs/epicchain-go/examples/token/nep17"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/lib/address"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/storage"
 )
 
 const (

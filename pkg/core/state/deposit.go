@@ -6,7 +6,7 @@ import (
 	"math"
 	"math/big"
 
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 )
 
 // Deposit represents GAS deposit from a Notary contract.

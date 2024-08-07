@@ -1,7 +1,7 @@
 package pkg2
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/compiler/testdata/pkg3"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/pkg3"
 )
 
 func init() {

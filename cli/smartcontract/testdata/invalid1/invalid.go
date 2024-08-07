@@ -2,8 +2,8 @@
 package invalid1
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop"
-	"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
 )
 
 // Notify1 emits a correctly typed event.

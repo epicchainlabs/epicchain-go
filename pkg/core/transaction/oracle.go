@@ -7,7 +7,7 @@ import (
 	"math"
 	"strings"
 
-	"github.com/nspcc-dev/neo-go/pkg/io"
+	"github.com/epicchainlabs/epicchain-go/pkg/io"
 )
 
 //go:generate stringer -type=OracleResponseCode

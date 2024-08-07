@@ -3,7 +3,7 @@ package rpcclient
 import (
 	"context"
 
-	"github.com/nspcc-dev/neo-go/pkg/neorpc"
+	"github.com/epicchainlabs/epicchain-go/pkg/neorpc"
 )
 
 // InternalHook is a function signature that is required to create a local client

@@ -4,9 +4,9 @@ import (
 	"flag"
 	"testing"
 
-	"github.com/nspcc-dev/neo-go/cli/app"
-	"github.com/nspcc-dev/neo-go/cli/options"
-	"github.com/nspcc-dev/neo-go/internal/testcli"
+	"github.com/epicchainlabs/epicchain-go/cli/app"
+	"github.com/epicchainlabs/epicchain-go/cli/options"
+	"github.com/epicchainlabs/epicchain-go/internal/testcli"
 	"github.com/stretchr/testify/require"
 	"github.com/urfave/cli"
 )

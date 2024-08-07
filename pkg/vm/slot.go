@@ -3,7 +3,7 @@ package vm
 import (
 	"encoding/json"
 
-	"github.com/nspcc-dev/neo-go/pkg/vm/stackitem"
+	"github.com/epicchainlabs/epicchain-go/pkg/vm/stackitem"
 )
 
 // slot is a fixed-size slice of stack items.

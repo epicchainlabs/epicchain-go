@@ -1,9 +1,9 @@
 package verify
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/interop/lib/address"
-	"github.com/nspcc-dev/neo-go/pkg/interop/runtime"
-	"github.com/nspcc-dev/neo-go/pkg/interop/util"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/lib/address"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/runtime"
+	"github.com/epicchainlabs/epicchain-go/pkg/interop/util"
 )
 
 // Verify is a verification contract method.

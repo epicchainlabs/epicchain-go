@@ -1,8 +1,8 @@
 package nested1
 
 import (
-	"github.com/nspcc-dev/neo-go/pkg/compiler/testdata/globalvar/nested2"
-	alias "github.com/nspcc-dev/neo-go/pkg/compiler/testdata/globalvar/nested3"
+	"github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/globalvar/nested2"
+	alias "github.com/epicchainlabs/epicchain-go/pkg/compiler/testdata/globalvar/nested3"
 )
 
 // Unused shouldn't produce any code if unused.

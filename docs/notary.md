@@ -243,7 +243,7 @@ won't pass verification.
 Notary native contract supports `onNEP17Payment` method. Thus, to deposit funds to
 the Notary native contract, transfer the desired amount of GAS to the contract
 address. Use
-[func (*Client) TransferNEP17](https://pkg.go.dev/github.com/nspcc-dev/neo-go@v0.97.2/pkg/rpcclient#Client.TransferNEP17)
+[func (*Client) TransferNEP17](https://pkg.go.dev/github.com/epicchainlabs/epicchain-go@v0.97.2/pkg/rpcclient#Client.TransferNEP17)
 with the `data` parameter matching the following requirements:
 - `data` should be an array of two elements: `to` and `till`.
 - `to` denotes the receiver of the deposit. It can be nil in case `to` equals
@@ -310,11 +310,11 @@ subpackage with an example written in Go doc.
    field) and calculate system fee using regular rules (that will be `SystemFee`
    transaction field). Probably, you'll perform one of these actions:
    1. If the script is a contract method call, use `invokefunction` RPC API
-      [func (*Client) InvokeFunction](https://pkg.go.dev/github.com/nspcc-dev/neo-go@v0.97.2/pkg/rpcclient#Client.InvokeFunction)
+      [func (*Client) InvokeFunction](https://pkg.go.dev/github.com/epicchainlabs/epicchain-go@v0.97.2/pkg/rpcclient#Client.InvokeFunction)
       and fetch the script and the gas consumed from the result.
    2. If the script is more complicated than just a contract method call,
       construct the script manually and use `invokescript` RPC API
-      [func (*Client) InvokeScript](https://pkg.go.dev/github.com/nspcc-dev/neo-go@v0.97.2/pkg/rpcclient#Client.InvokeScript)
+      [func (*Client) InvokeScript](https://pkg.go.dev/github.com/epicchainlabs/epicchain-go@v0.97.2/pkg/rpcclient#Client.InvokeScript)
       to fetch the gas consumed from the result.
    3. Or just construct the script and set system fee manually.
 3. Calculate the height main transaction is valid until (that will be
@@ -374,14 +374,14 @@ subpackage with an example written in Go doc.
      if `Invocation` script is to be collected from other notary requests.
      `Invocation` script **should be empty**.
 8. Calculate network fee for the transaction (that will be `NetworkFee`
-   transaction field). Use [func (*Client) CalculateNetworkFee](https://pkg.go.dev/github.com/nspcc-dev/neo-go@v0.99.2/pkg/rpcclient#Client.CalculateNetworkFee)
+   transaction field). Use [func (*Client) CalculateNetworkFee](https://pkg.go.dev/github.com/epicchainlabs/epicchain-go@v0.99.2/pkg/rpcclient#Client.CalculateNetworkFee)
    method with the main transaction given to it.
 9. Fill in all signatures that can be provded by the client creating request,
    that includes simple-signature accounts and multisignature accounts where
    the client has one of the keys (in which case an invocation script is
    created that pushes just one signature onto the stack).
 10. Sign and submit P2P notary request. Use
-    [func (*Actor) Notarize](https://pkg.go.dev/github.com/nspcc-dev/neo-go/pkg/rpcclient/notary#Actor.Notarize) for it.
+    [func (*Actor) Notarize](https://pkg.go.dev/github.com/epicchainlabs/epicchain-go/pkg/rpcclient/notary#Actor.Notarize) for it.
     - Use the signed main transaction from step 9 as `mainTx` argument.
     
     `Notarize` will construct and sign a fallback transaction using `Actor`
@@ -389,7 +389,7 @@ subpackage with an example written in Go doc.
     into a P2PNotaryRequest and submit it to the RPC node. It returns hashes of
     the main and fallback transactions as well as their `ValidUntilBlock` value.
     If you need more control over fallback transaction use `Actor` options or
-    [func (*Actor) SendRequest](https://pkg.go.dev/github.com/nspcc-dev/neo-go/pkg/rpcclient/notary#Actor.SendRequest)
+    [func (*Actor) SendRequest](https://pkg.go.dev/github.com/epicchainlabs/epicchain-go/pkg/rpcclient/notary#Actor.SendRequest)
     API.
 
 After P2PNotaryRequests are sent, participants should wait for one of their
